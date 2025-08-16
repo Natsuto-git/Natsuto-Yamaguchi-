@@ -420,22 +420,20 @@ h1, h2, h3, h4, h5, h6 {
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 2s infinite;
+    left: 0;
+    right: 0;
     width: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: bounce 2s infinite;
 }
 
 .scroll-arrow {
     text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: auto;
+    display: inline-block;
     margin: 0;
 }
 
@@ -445,9 +443,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-    40% { transform: translateX(-50%) translateY(-10px); }
-    60% { transform: translateX(-50%) translateY(-5px); }
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
 }
 
 /* Section Animations */
@@ -1320,24 +1318,22 @@ h1, h2, h3, h4, h5, h6 {
     .scroll-indicator {
         position: absolute;
         bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
+        left: 0;
+        right: 0;
         width: 100%;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 2;
+        animation: bounce 2s infinite;
     }
 
     .scroll-arrow {
         margin: 0;
-        animation: bounce 2s infinite;
         text-align: center;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: auto;
+        display: inline-block;
     }
 
     /* About cards mobile text */
