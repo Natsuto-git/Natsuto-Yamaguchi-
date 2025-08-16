@@ -1,0 +1,22 @@
+{
+  "name": "natsuto-portfolio",
+  "version": "1.0.0",
+  "description": "夏翔の自己紹介サイト",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "japan"
+  ],
+  "author": "Natsuto Yamaguchi",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^7.1.2"
+  }
+}
