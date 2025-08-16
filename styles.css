@@ -423,6 +423,11 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .scroll-arrow {
@@ -431,6 +436,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 .scroll-arrow i {
@@ -1317,10 +1323,15 @@ h1, h2, h3, h4, h5, h6 {
         left: 50%;
         transform: translateX(-50%);
         z-index: 2;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .scroll-arrow {
-        margin-top: 0.5rem;
+        margin: 0;
         animation: bounce 2s infinite;
         text-align: center;
         width: 100%;
