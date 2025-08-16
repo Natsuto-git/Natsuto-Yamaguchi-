@@ -925,14 +925,19 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Hero section mobile optimization */
     .hero {
-        padding: 4rem 0 2rem;
-        min-height: 80vh;
+        padding: 3rem 0 1rem;
+        min-height: 85vh;
+        display: flex;
+        flex-direction: column;
     }
 
     .hero-content {
         flex-direction: column;
         text-align: center;
-        gap: 2rem;
+        gap: 1.5rem;
+        flex: 1;
+        justify-content: center;
+        padding-bottom: 2rem;
     }
 
     .hero-text {
@@ -976,9 +981,10 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 0.75rem;
-        margin: 2rem auto 1rem;
-        max-width: 320px;
+        gap: 1rem;
+        margin: 2.5rem auto 3rem;
+        max-width: 340px;
+        padding: 0 1rem;
     }
 
     .hero-cta .cta-button {
@@ -1103,18 +1109,20 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Overrides for hero CTA buttons on small mobile */
     .hero-cta {
-        max-width: 280px;
-        gap: 0.5rem;
-        margin: 1.5rem auto 2rem;
+        max-width: 300px;
+        gap: 0.8rem;
+        margin: 2rem auto 3.5rem;
+        padding: 0 0.5rem;
     }
 
     .hero-cta .cta-button {
         flex: 1;
-        min-width: 100px;
-        max-width: 135px;
-        padding: 0.8rem 1rem;
-        font-size: 0.85rem;
+        min-width: 110px;
+        max-width: 140px;
+        padding: 0.9rem 1.1rem;
+        font-size: 0.9rem;
         margin: 0;
+        white-space: nowrap;
     }
 
     .profile-image {
@@ -1240,13 +1248,16 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Scroll down arrow mobile positioning */
     .scroll-indicator {
-        bottom: 1.5rem;
+        position: absolute;
+        bottom: 2rem;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 2;
     }
 
     .scroll-arrow {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
+        animation: bounce 2s infinite;
     }
 
     /* About cards mobile text */
