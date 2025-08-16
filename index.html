@@ -3,86 +3,645 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>夏翔 - 自己紹介サイト</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="山口夏翔（Natsuto Yamaguchi）の自己紹介・ポートフォリオサイト。19歳フリーランサーの経験・スキル・価値観を紹介。人間力と情熱、行動力で学歴を圧倒することを目標に活動中。">
+    <meta name="keywords" content="山口夏翔, Natsuto Yamaguchi, フリーランス, ポートフォリオ, 兵庫県, 生徒会長, インターアクト, ENFJ, 若者支援">
+    <meta name="author" content="Natsuto Yamaguchi">
+    <meta property="og:title" content="山口夏翔 | Natsuto Yamaguchi - Portfolio">
+    <meta property="og:description" content="19歳フリーランサー山口夏翔の自己紹介サイト。人間力と情熱、行動力で学歴を圧倒することを目標に、若者から新しい社会づくりを積極的に行っていける社会を目指す。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="profile.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="山口夏翔 | Natsuto Yamaguchi">
+    <meta name="twitter:description" content="19歳フリーランサー。最強のポジティブ思考力で挑戦を続ける。">
+    <link rel="icon" type="image/svg+xml" href="profile.svg">
+    <title>山口夏翔 | Natsuto Yamaguchi - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>夏翔 (Natsuto)</h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">NY</a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#vision" class="nav-link">Vision</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#interests" class="nav-link">Interests</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
             </ul>
-        </nav>
-    </header>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <h2>こんにちは！</h2>
-                <p>私は夏翔です。ウェブ開発と技術に情熱を持っています。</p>
-                <a href="#about" class="cta-button">詳しく見る</a>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>
-                    技術とクリエイティビティを組み合わせて、ユーザーに価値のあるウェブ体験を提供することを目指しています。
-                    常に新しい技術を学び、成長し続けることを大切にしています。
-                </p>
-            </div>
-        </section>
-
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <h3>Frontend</h3>
-                        <p>HTML, CSS, JavaScript, React, Vue.js</p>
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="profile-image-container">
+                        <div class="profile-image">
+                            <img src="profile.svg" alt="Natsuto Yamaguchi" id="profileImg">
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <h3>Backend</h3>
-                        <p>Node.js, Python, Express</p>
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="hero-greeting">Hello, I'm</span>
+                            <span class="hero-name">山口 夏翔</span>
+                            <span class="hero-name-en">Natsuto Yamaguchi</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            人間力と情熱、行動力で学歴を圧倒する | 19歳フリーランス | 兵庫県 | ENFJ
+                        </p>
+                        <div class="hero-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <span>「最初から正解の道を選ぶのではなく、自分がより面白いと感じた道を選び、その道を正解にする」</span>
+                        </div>
+                        <div class="hero-cta">
+                            <a href="#about" class="cta-button primary">About Me</a>
+                            <a href="#contact" class="cta-button secondary">Contact</a>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <h3>Tools</h3>
-                        <p>Git, Vite, Webpack, VS Code</p>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-arrow">
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="projects">
+        <section id="about" class="about-section">
             <div class="container">
-                <h2>Projects</h2>
-                <div class="project-grid">
-                    <div class="project-item">
-                        <h3>自己紹介サイト</h3>
-                        <p>ViteとGitHub Pagesを使用したモダンなポートフォリオサイト</p>
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-main">
+                        <div class="about-card main-intro">
+                            <div class="card-icon">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <h3>自己紹介</h3>
+                            <p>
+                                こんにちは、山口夏翔です。19歳のフリーランスとして、兵庫県を拠点に活動しています。
+                                ENFJ（主人公）タイプとして、「最初から正解の道を選ぶのではなく、自分がより面白いと感じた道を選び、その道を正解にする」
+                                という信念のもと、最強のポジティブ思考力で挑戦を続けています。
+                            </p>
+                            <p>
+                                YouTuberのヒカルさんから大きな影響を受け、「なりたいものになれるのはなろうとしたものだけ」
+                                「心配すんな全部上手くいく」という言葉を座右の銘として、失敗から学び成功につなげる力を
+                                自身の強みとしています。挫折しても諦めずに全てを成功へ繋げることを心がけています。
+                            </p>
+                        </div>
+
+                        <div class="about-card philosophy">
+                            <div class="card-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>人とのコミュニケーション哲学</h3>
+                            <p>
+                                人とのコミュニケーションでは、人の良いところに目を向け、加点方式で評価することで
+                                円滑な関係を築くことを大切にしています。常に新しい人と出会い、価値観やビジョンを
+                                共有することを心がけ、行動力とポジティブ思考が自身の個性を表現しています。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>最強のポジティブ思考</h4>
+                                <p>どんな困難も成長の機会として捉える</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>圧倒的行動力</h4>
+                                <p>考えるより先に動き、経験から学ぶ</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>人との繋がりを重視</h4>
+                                <p>多様な価値観を受け入れ共有する</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="vision" class="vision-section">
             <div class="container">
-                <h2>Contact</h2>
-                <p>お気軽にお問い合わせください。</p>
-                <a href="mailto:your.email@example.com" class="contact-button">メールを送る</a>
+                <div class="section-header">
+                    <h2 class="section-title">Vision & Goals</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="vision-content">
+                    <div class="vision-main">
+                        <div class="vision-card primary-goal">
+                            <div class="vision-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3>これからの夢・目標</h3>
+                            <p class="vision-statement">
+                                人間力と情熱、行動力で学歴を圧倒すること。
+                            </p>
+                            <p>
+                                学歴や既存の枠組みにとらわれることなく、実際の行動と成果、
+                                そして人との関わりの中で培われる人間力によって、
+                                社会に価値を提供し続けることを目指しています。
+                            </p>
+                        </div>
+
+                        <div class="vision-card social-contribution">
+                            <div class="vision-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3>社会貢献へのビジョン</h3>
+                            <p>
+                                今は意識を高く持っている若者や学生が「少し変な目で見られがち」な現状を改善し、
+                                そのような若者たちが繋がり、若者から新しい社会づくりを積極的に行っていける社会を目指しています。
+                            </p>
+                            <p>
+                                熱い情熱は持っているものの、「何をしたらいいかわからない」「何がしたいかわからない」
+                                という若者たちの心の中にある「種を咲かせていける」ような社会を作りたいと考えています。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="inspiration-section">
+                        <h3><i class="fas fa-star"></i> 影響を受けた人物</h3>
+                        <div class="inspiration-card">
+                            <div class="inspiration-content">
+                                <h4>YouTuber ヒカルさん</h4>
+                                <div class="quotes">
+                                    <blockquote>
+                                        <i class="fas fa-quote-left"></i>
+                                        「なりたいものになれるのはなろうとしたものだけ」
+                                    </blockquote>
+                                    <blockquote>
+                                        <i class="fas fa-quote-left"></i>
+                                        「心配すんな全部上手くいく」
+                                    </blockquote>
+                                </div>
+                                <p>
+                                    ヒカルさんからポジティブな考え方を学び、これらの言葉を自身の信念として
+                                    日々の行動の指針にしています。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Experience & Achievements</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-timeline">
+                        <div class="experience-item">
+                            <div class="experience-marker"></div>
+                            <div class="experience-card">
+                                <div class="experience-date">2024 - Present</div>
+                                <div class="experience-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <h3>フリーランス活動 & 継続学習</h3>
+                                <p class="experience-role">フリーランス | 継続的スキル向上</p>
+                                <div class="experience-details">
+                                    <p>人間力と情熱、行動力で学歴を圧倒することを目標に、多方面でのスキル習得に取り組んでいます。</p>
+                                    <ul class="achievement-list">
+                                        <li>英語力向上（TOEFL iBT MyBest Score 80点達成）</li>
+                                        <li>中国語学習を継続中</li>
+                                        <li>ビジネス実務法務検定の勉強中</li>
+                                        <li>AI ツールの日常的な活用と研究</li>
+                                        <li>様々な分野の知識とスキルの統合</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-marker"></div>
+                            <div class="experience-card highlight">
+                                <div class="experience-date">高校3年生</div>
+                                <div class="experience-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <h3>生徒会長として校則改定を実現</h3>
+                                <p class="experience-role">生徒会長 | リーダーシップ・交渉</p>
+                                
+                                <div class="challenge-section">
+                                    <h4><i class="fas fa-exclamation-triangle"></i> 課題・きっかけ</h4>
+                                    <p>
+                                        冬場の厳しい寒さにもかかわらず、高価で重たい指定のコートしか防寒具として
+                                        認められていない校則により、生徒が健康面・経済面で負担を感じていました。
+                                        自身も2年間不満を感じ、多くの生徒からも同様の意見がありました。
+                                    </p>
+                                </div>
+
+                                <div class="action-section">
+                                    <h4><i class="fas fa-cogs"></i> 行動・解決策</h4>
+                                    <ul class="action-list">
+                                        <li>周囲の意見をまとめ、改定のポイントやメリット・デメリットをノートに整理</li>
+                                        <li>インターネットで校則改定の効率的な進め方や教師とのコミュニケーションについて学習</li>
+                                        <li>公式な資料を作成し、生徒代表を集めて反対意見にも耳を傾けた</li>
+                                    </ul>
+                                </div>
+
+                                <div class="result-section">
+                                    <h4><i class="fas fa-trophy"></i> 成果・影響</h4>
+                                    <div class="result-highlight">
+                                        <span class="big-number">90%+</span>
+                                        <span class="result-text">全校生徒の賛成を獲得</span>
+                                    </div>
+                                    <p>3年以上改定されていなかった校則の改定に成功</p>
+                                </div>
+
+                                <div class="skills-gained">
+                                    <h4><i class="fas fa-medal"></i> 得られたスキル</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">リーダーシップ</span>
+                                        <span class="skill-tag">傾聴力・共感力</span>
+                                        <span class="skill-tag">交渉力</span>
+                                        <span class="skill-tag">資料作成能力</span>
+                                        <span class="skill-tag">リサーチ能力</span>
+                                        <span class="skill-tag">チームマネジメント</span>
+                                        <span class="skill-tag">プレゼンテーション</span>
+                                        <span class="skill-tag">論理的思考力</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="experience-marker"></div>
+                            <div class="experience-card highlight">
+                                <div class="experience-date">17歳</div>
+                                <div class="experience-icon">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <h3>インターアクトクラブ部長「服の力プロジェクト」</h3>
+                                <p class="experience-role">インターアクトクラブ部長 | 社会貢献活動</p>
+                                
+                                <div class="challenge-section">
+                                    <h4><i class="fas fa-exclamation-triangle"></i> 課題・きっかけ</h4>
+                                    <p>
+                                        家庭で不要になった古着が廃棄されたり安価で売られたりする一方で、
+                                        世界には服を必要としている人々がたくさんいるという現状を改善したいと考えました。
+                                    </p>
+                                </div>
+
+                                <div class="action-section">
+                                    <h4><i class="fas fa-cogs"></i> 行動・解決策</h4>
+                                    <ul class="action-list">
+                                        <li>地域の図書館や教育機関に回収ボックスの設置許可を取得</li>
+                                        <li>資料やポスターを作成して地域住民に寄付を促進</li>
+                                        <li>実際に回収ボックスの前に立ち、自身の声で直接寄付を呼びかけ</li>
+                                    </ul>
+                                </div>
+
+                                <div class="result-section">
+                                    <h4><i class="fas fa-trophy"></i> 成果・影響</h4>
+                                    <div class="result-highlight">
+                                        <span class="big-number">10箱分</span>
+                                        <span class="result-text">1ヶ月で古着を回収</span>
+                                    </div>
+                                    <p>地域住民との信頼関係を構築し、継続的な支援を獲得</p>
+                                </div>
+
+                                <div class="skills-gained">
+                                    <h4><i class="fas fa-medal"></i> 得られたスキル</h4>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">地域関係構築</span>
+                                        <span class="skill-tag">多世代コミュニケーション</span>
+                                        <span class="skill-tag">プロジェクト企画</span>
+                                        <span class="skill-tag">広告・ポスター作成</span>
+                                        <span class="skill-tag">直接営業</span>
+                                        <span class="skill-tag">社会課題解決</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Learning</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="skills-content">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <div class="category-header">
+                                <i class="fas fa-globe"></i>
+                                <h3>Language Skills</h3>
+                            </div>
+                            <div class="skills-list">
+                                <div class="skill-item-detailed">
+                                    <span class="skill-name">英語</span>
+                                    <span class="skill-level">TOEFL iBT 80点</span>
+                                </div>
+                                <div class="skill-item-detailed">
+                                    <span class="skill-name">中国語</span>
+                                    <span class="skill-level">学習中</span>
+                                </div>
+                                <div class="skill-item-detailed">
+                                    <span class="skill-name">日本語</span>
+                                    <span class="skill-level">ネイティブ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <div class="category-header">
+                                <i class="fas fa-briefcase"></i>
+                                <h3>Business Skills</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span class="skill-tag">ビジネス実務法務検定（勉強中）</span>
+                                <span class="skill-tag">資料作成</span>
+                                <span class="skill-tag">プロジェクト管理</span>
+                                <span class="skill-tag">交渉・調整</span>
+                                <span class="skill-tag">プレゼンテーション</span>
+                                <span class="skill-tag">リサーチ・分析</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <div class="category-header">
+                                <i class="fas fa-robot"></i>
+                                <h3>Technology & AI</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span class="skill-tag">AI ツール活用</span>
+                                <span class="skill-tag">ChatGPT</span>
+                                <span class="skill-tag">画像生成AI</span>
+                                <span class="skill-tag">自動化ツール</span>
+                                <span class="skill-tag">デジタルマーケティング</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <div class="category-header">
+                                <i class="fas fa-users"></i>
+                                <h3>Leadership & Communication</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span class="skill-tag">リーダーシップ</span>
+                                <span class="skill-tag">チームビルディング</span>
+                                <span class="skill-tag">傾聴力・共感力</span>
+                                <span class="skill-tag">多世代コミュニケーション</span>
+                                <span class="skill-tag">論理的思考力</span>
+                                <span class="skill-tag">問題解決能力</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="learning-journey">
+                        <h3><i class="fas fa-road"></i> 継続的な学習への取り組み</h3>
+                        <div class="learning-cards">
+                            <div class="learning-card">
+                                <div class="learning-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h4>日々の学習</h4>
+                                <p>AIツールを毎日遊び感覚で触れながら、最新技術の動向をキャッチアップしています。</p>
+                            </div>
+                            <div class="learning-card">
+                                <div class="learning-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <h4>資格取得</h4>
+                                <p>ビジネス実務法務検定の取得を目指し、実務に活かせる法律知識を習得中です。</p>
+                            </div>
+                            <div class="learning-card">
+                                <div class="learning-icon">
+                                    <i class="fas fa-language"></i>
+                                </div>
+                                <h4>国際的視野</h4>
+                                <p>英語・中国語を通じて、グローバルな視点とコミュニケーション能力を向上させています。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="interests" class="interests-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Hobbies & Interests</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="interests-content">
+                    <div class="sports-section">
+                        <h3><i class="fas fa-running"></i> スポーツへの情熱</h3>
+                        <p class="sports-intro">様々なスポーツを愛し、観戦からプレイまで幅広く楽しんでいます。仲間との交流や家族との時間を大切にしながら、スポーツを通じて心身ともに健康的な生活を送っています。</p>
+                        
+                        <div class="sports-grid">
+                            <div class="sport-card">
+                                <div class="sport-icon"><i class="fas fa-baseball-ball"></i></div>
+                                <h4>野球</h4>
+                            </div>
+                            <div class="sport-card">
+                                <div class="sport-icon"><i class="fas fa-fist-raised"></i></div>
+                                <h4>柔道</h4>
+                            </div>
+                            <div class="sport-card">
+                                <div class="sport-icon"><i class="fas fa-table-tennis"></i></div>
+                                <h4>テニス</h4>
+                            </div>
+                            <div class="sport-card">
+                                <div class="sport-icon"><i class="fas fa-volleyball-ball"></i></div>
+                                <h4>バレーボール</h4>
+                            </div>
+                            <div class="sport-card">
+                                <div class="sport-icon"><i class="fas fa-futbol"></i></div>
+                                <h4>サッカー</h4>
+                            </div>
+                            <div class="sport-card">
+                                <div class="sport-icon"><i class="fas fa-basketball-ball"></i></div>
+                                <h4>バスケットボール</h4>
+                            </div>
+                            <div class="sport-card">
+                                <div class="sport-icon"><i class="fas fa-circle"></i></div>
+                                <h4>ビリヤード</h4>
+                            </div>
+                            <div class="sport-card">
+                                <div class="sport-icon"><i class="fas fa-table-tennis"></i></div>
+                                <h4>卓球</h4>
+                            </div>
+                            <div class="sport-card">
+                                <div class="sport-icon"><i class="fas fa-shuttlecock"></i></div>
+                                <h4>バドミントン</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="other-interests">
+                        <div class="interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-hot-tub"></i>
+                            </div>
+                            <div class="interest-content">
+                                <h4>温泉</h4>
+                                <p>リラックスと心身のリフレッシュのために温泉を愛用。日本各地の温泉地を巡るのが趣味です。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="interest-content">
+                                <h4>人との交流</h4>
+                                <p>常に新しい人と出会い、多様な価値観やビジョンを共有することを心がけています。人との繋がりから学ぶことを大切にしています。</p>
+                            </div>
+                        </div>
+
+                        <div class="interest-card">
+                            <div class="interest-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="interest-content">
+                                <h4>グルメ・料理</h4>
+                                <p>お寿司、ラーメンを特に愛し、海外の料理も大好きです。嫌いな食べ物はなく、様々な文化の料理を通じて世界を知ることを楽しんでいます。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="connection-seeking">
+                        <h3><i class="fas fa-handshake"></i> 求める交流・仲間</h3>
+                        <div class="connection-cards">
+                            <div class="connection-card">
+                                <div class="connection-icon">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <h4>スポーツ仲間</h4>
+                                <p>様々なスポーツを一緒に楽しめる仲間を求めています。競技レベルを問わず、楽しむ心を大切にしています。</p>
+                            </div>
+                            
+                            <div class="connection-card">
+                                <div class="connection-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h4>ビジネス・起業仲間</h4>
+                                <p>起業を志している人、経営者の方、グローバルに活動している方との交流を通じて、共に成長していきたいです。</p>
+                            </div>
+                            
+                            <div class="connection-card">
+                                <div class="connection-icon">
+                                    <i class="fas fa-laugh"></i>
+                                </div>
+                                <h4>楽しい仲間</h4>
+                                <p>純粋に楽しく遊べる友達との時間を大切にしています。ポジティブで明るい関係を築ける人との出会いを求めています。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Let's Connect</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-intro">
+                        <h3>新しい出会いと機会を求めています</h3>
+                        <p>
+                            共に新しい社会を作っていく仲間、スポーツを楽しむ友達、ビジネスの可能性を探る方々など、
+                            様々な形での交流を歓迎しています。価値観やビジョンを共有し、お互いに成長できる関係を
+                            築いていければと思います。お気軽にご連絡ください！
+                        </p>
+                    </div>
+                    
+                    <div class="contact-cta">
+                        <p class="contact-message">「心配すんな全部上手くいく」の精神で、新しい挑戦を続けています。</p>
+                        <div class="contact-buttons">
+                            <a href="https://instagram.com/__natsuto_" class="contact-btn instagram" target="_blank" rel="noopener">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram でフォロー</span>
+                            </a>
+                            <a href="https://linkedin.com/in/山口夏翔" class="contact-btn linkedin" target="_blank" rel="noopener">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn で繋がる</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 夏翔 (Natsuto). All rights reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 山口夏翔 (Natsuto Yamaguchi). All rights reserved.</p>
+                    <p class="footer-motto">「なりたいものになれるのはなろうとしたものだけ」</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://instagram.com/__natsuto_" class="social-link" title="Instagram" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/山口夏翔" class="social-link" title="LinkedIn" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script type="module" src="main.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
