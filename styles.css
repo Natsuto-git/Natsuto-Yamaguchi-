@@ -322,6 +322,11 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transform: translateX(50px);
     animation: slideInRight 1s ease 0.5s forwards;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .hero-greeting {
@@ -341,6 +346,8 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 0.2rem;
+    text-align: center;
+    width: 100%;
 }
 
 .hero-name-en {
@@ -350,6 +357,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     margin-bottom: 1.5rem;
     font-family: 'Inter', sans-serif;
+    text-align: center;
+    width: 100%;
 }
 
 .hero-subtitle {
@@ -357,12 +366,17 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
     line-height: 1.7;
+    text-align: center;
+    width: 100%;
 }
 
 .hero-cta {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .cta-button {
@@ -1352,11 +1366,14 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(19, 83, 137, 0.1);
     padding: 1.5rem;
     border-radius: 15px;
-    margin: 2rem 0;
+    margin: 2rem auto;
     border-left: 4px solid var(--primary-color);
     font-style: italic;
     font-size: 1rem;
     line-height: 1.6;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
 }
 
 .hero-quote i {
