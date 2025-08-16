@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/Natsuto-Yamaguchi-/' : '/',
+  base: '/natsuto-portfolio/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
