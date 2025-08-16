@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/natsuto-portfolio/',
+  base: '/Natsuto-Yamaguchi-/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
