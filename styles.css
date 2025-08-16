@@ -47,6 +47,12 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-primary);
     overflow-x: hidden;
+    /* 日本語の自然な改行設定 */
+    word-break: normal;
+    overflow-wrap: break-word;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
 }
 
 /* Loading Screen */
@@ -931,7 +937,8 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-text {
         order: 2;
-        padding: 0 1rem;
+        padding: 0 1.5rem;
+        max-width: 100%;
     }
 
     .hero-title {
@@ -940,20 +947,28 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-name {
         font-size: 2.2rem;
-        line-height: 1.2;
+        line-height: 1.3;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 
     .hero-name-en {
         font-size: 1.2rem;
         margin-top: 0.5rem;
         opacity: 0.8;
+        word-break: keep-all;
     }
 
     .hero-quote {
         font-size: 1rem;
-        line-height: 1.5;
+        line-height: 1.7;
         margin: 1.5rem 0;
-        padding: 0 1rem;
+        padding: 0 1.5rem;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 
     .hero-visual {
@@ -993,11 +1008,23 @@ h1, h2, h3, h4, h5, h6 {
 
     .experience-card h3 {
         font-size: 1.3rem;
-        line-height: 1.3;
+        line-height: 1.4;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        margin-bottom: 0.75rem;
     }
 
     .experience-role {
         font-size: 0.9rem;
+        line-height: 1.5;
+        word-break: keep-all;
+    }
+
+    .experience-card p,
+    .experience-card li {
+        line-height: 1.6;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 
     /* Skills section mobile */
@@ -1028,26 +1055,38 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 480px) {
     /* Extra small mobile optimization */
     .container {
-        padding: 0 0.75rem;
+        padding: 0 1rem;
     }
 
     .hero-name {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
+        line-height: 1.3;
+        word-break: keep-all;
+        padding: 0 0.5rem;
     }
 
     .hero-name-en {
         font-size: 1.1rem;
+        word-break: keep-all;
     }
 
     .hero-quote {
         font-size: 0.95rem;
-        padding: 0 0.5rem;
+        line-height: 1.7;
+        padding: 0 1rem;
+        max-width: 95%;
+        margin: 1.5rem auto;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 
     .cta-button {
-        padding: 0.8rem 1.5rem;
-        min-width: 120px;
-        font-size: 0.9rem;
+        padding: 1rem 1.5rem;
+        min-width: 140px;
+        font-size: 0.95rem;
+        margin: 1.5rem auto;
+        display: block;
+        width: fit-content;
     }
 
     .profile-image {
@@ -1083,13 +1122,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Touch-friendly interactions and mobile enhancements */
 @media (max-width: 768px) {
-    /* Better touch targets */
+    /* Better touch targets and mobile button positioning */
     .cta-button {
         min-height: 48px;
         padding: 1rem 2rem;
         font-size: 1rem;
         font-weight: 500;
         touch-action: manipulation;
+        margin: 1rem auto;
+        display: inline-block;
+        width: auto;
+        min-width: 160px;
+        text-align: center;
     }
 
     .nav-link {
@@ -1146,6 +1190,58 @@ h1, h2, h3, h4, h5, h6 {
 
     .contact-info {
         text-align: center;
+    }
+
+    /* Section titles and subtitles mobile */
+    .section-title {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+    }
+
+    .section-subtitle {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        line-height: 1.6;
+        padding: 0 1rem;
+        max-width: 90%;
+        margin: 0 auto 2rem;
+    }
+
+    /* Scroll down arrow mobile positioning */
+    .scroll-down {
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* About cards mobile text */
+    .about-card h3 {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        line-height: 1.4;
+    }
+
+    .about-card p {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        line-height: 1.6;
+    }
+
+    /* Interest cards mobile */
+    .interest-card h3 {
+        word-break: keep-all;
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+    }
+
+    .interest-card p {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        line-height: 1.6;
+        font-size: 0.9rem;
     }
 }
 
