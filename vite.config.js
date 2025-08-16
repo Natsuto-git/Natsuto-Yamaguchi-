@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/natsuto-portfolio/', // GitHubリポジトリ名に合わせて変更してください
+  base: '/Natsuto-Yamaguchi-/', // GitHubリポジトリ名に合わせて変更
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
