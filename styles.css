@@ -416,6 +416,14 @@ h1, h2, h3, h4, h5, h6 {
     animation: bounce 2s infinite;
 }
 
+.scroll-arrow {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .scroll-arrow i {
     font-size: 1.5rem;
     color: var(--primary-color);
@@ -1305,6 +1313,11 @@ h1, h2, h3, h4, h5, h6 {
     .scroll-arrow {
         margin-top: 0.5rem;
         animation: bounce 2s infinite;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     /* About cards mobile text */
