@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/Natsuto-Yamaguchi-/', // GitHubリポジトリ名に合わせて変更
+  base: process.env.NODE_ENV === 'production' ? '/Natsuto-Yamaguchi-/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
