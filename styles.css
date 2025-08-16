@@ -971,6 +971,27 @@ h1, h2, h3, h4, h5, h6 {
         overflow-wrap: break-word;
     }
 
+    /* Hero CTA buttons mobile optimization */
+    .hero-cta {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 2rem auto 1rem;
+        max-width: 320px;
+    }
+
+    .hero-cta .cta-button {
+        flex: 1;
+        min-width: 120px;
+        max-width: 150px;
+        padding: 0.9rem 1.2rem;
+        font-size: 0.9rem;
+        text-align: center;
+        margin: 0;
+        display: block;
+    }
+
     .hero-visual {
         order: 1;
         margin-bottom: 1rem;
@@ -1080,13 +1101,20 @@ h1, h2, h3, h4, h5, h6 {
         overflow-wrap: break-word;
     }
 
-    .cta-button {
-        padding: 1rem 1.5rem;
-        min-width: 140px;
-        font-size: 0.95rem;
-        margin: 1.5rem auto;
-        display: block;
-        width: fit-content;
+    /* Overrides for hero CTA buttons on small mobile */
+    .hero-cta {
+        max-width: 280px;
+        gap: 0.5rem;
+        margin: 1.5rem auto 2rem;
+    }
+
+    .hero-cta .cta-button {
+        flex: 1;
+        min-width: 100px;
+        max-width: 135px;
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+        margin: 0;
     }
 
     .profile-image {
@@ -1211,10 +1239,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     /* Scroll down arrow mobile positioning */
-    .scroll-down {
-        bottom: 2rem;
+    .scroll-indicator {
+        bottom: 1.5rem;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .scroll-arrow {
+        margin-top: 1rem;
     }
 
     /* About cards mobile text */
