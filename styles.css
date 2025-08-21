@@ -1,5 +1,6 @@
 /* Color Palette - Sophisticated Navy & Neutrals */
 :root {
+    /* Light Theme Colors */
     --primary-color: #135389;
     --secondary-color: #6F789D;
     --accent-color: #CBA890;
@@ -14,6 +15,39 @@
     --shadow-heavy: rgba(19, 83, 137, 0.25);
     --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, #D4C3B1 100%);
+    
+    /* Dark Theme Colors */
+    --dark-bg-primary: #0A0E17;
+    --dark-bg-secondary: #1A1F2E;
+    --dark-bg-tertiary: #2A2F3E;
+    --dark-text-primary: #E8E9EA;
+    --dark-text-secondary: #B8B9BA;
+    --dark-text-light: #8A8B8C;
+    --dark-primary-color: #4A9EFF;
+    --dark-secondary-color: #7BA4D4;
+    --dark-accent-color: #D4A574;
+    --dark-shadow-light: rgba(0, 0, 0, 0.3);
+    --dark-shadow-medium: rgba(0, 0, 0, 0.4);
+    --dark-shadow-heavy: rgba(0, 0, 0, 0.5);
+    --dark-gradient-primary: linear-gradient(135deg, var(--dark-primary-color) 0%, var(--dark-secondary-color) 100%);
+    --dark-gradient-accent: linear-gradient(135deg, var(--dark-accent-color) 0%, #E4B894 100%);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-primary: var(--dark-bg-primary);
+    --bg-secondary: var(--dark-bg-secondary);
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --text-light: var(--dark-text-light);
+    --primary-color: var(--dark-primary-color);
+    --secondary-color: var(--dark-secondary-color);
+    --accent-color: var(--dark-accent-color);
+    --shadow-light: var(--dark-shadow-light);
+    --shadow-medium: var(--dark-shadow-medium);
+    --shadow-heavy: var(--dark-shadow-heavy);
+    --gradient-primary: var(--dark-gradient-primary);
+    --gradient-accent: var(--dark-gradient-accent);
 }
 
 /* Enhanced Scroll Animations */
@@ -152,6 +186,8 @@ body {
     /* モバイル最適化 */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Theme transition */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Loading Screen */
@@ -247,6 +283,17 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 20px var(--shadow-light);
 }
 
+/* Dark theme navbar */
+[data-theme="dark"] .navbar {
+    background: rgba(10, 14, 23, 0.95);
+    border-bottom: 1px solid var(--dark-shadow-light);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+    background: rgba(10, 14, 23, 0.98);
+    box-shadow: 0 2px 20px var(--dark-shadow-light);
+}
+
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -322,12 +369,81 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 2px;
 }
 
+/* Theme Toggle Button */
+.theme-toggle-item {
+    margin-left: 1rem;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px var(--shadow-medium);
+}
+
+.theme-toggle-btn .light-icon,
+.theme-toggle-btn .dark-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.theme-toggle-btn .light-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.theme-toggle-btn .dark-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+[data-theme="dark"] .theme-toggle-btn .light-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle-btn .dark-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Dark theme toggle button */
+[data-theme="dark"] .theme-toggle-btn {
+    background: var(--dark-gradient-primary);
+    box-shadow: 0 2px 10px var(--dark-shadow-light);
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+    box-shadow: 0 4px 15px var(--dark-shadow-medium);
+}
+
 /* Hero Section */
 .hero-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    transition: background 0.3s ease;
     position: relative;
     overflow: hidden;
 }
@@ -594,6 +710,14 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(30px);
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
+    transition: all 0.3s ease;
+}
+
+/* Dark theme cards */
+[data-theme="dark"] .about-card {
+    background: var(--dark-bg-secondary);
+    box-shadow: 0 10px 40px var(--dark-shadow-light);
+    border-left: 5px solid var(--dark-primary-color);
 }
 
 .about-card h3 {
@@ -626,6 +750,12 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(30px);
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Dark theme highlight items */
+[data-theme="dark"] .highlight-item {
+    background: var(--dark-bg-secondary);
+    box-shadow: 0 5px 20px var(--dark-shadow-light);
 }
 
 .highlight-item:nth-child(2) { animation-delay: 0.2s; }
@@ -684,6 +814,12 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(30px);
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Dark theme skill categories */
+[data-theme="dark"] .skill-category {
+    background: var(--dark-bg-secondary);
+    box-shadow: 0 10px 40px var(--dark-shadow-light);
 }
 
 .skill-category:nth-child(2) { animation-delay: 0.2s; }
@@ -885,6 +1021,12 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--primary-color);
     color: var(--white);
     padding: 2rem 0;
+    transition: background 0.3s ease;
+}
+
+/* Dark theme footer */
+[data-theme="dark"] .footer {
+    background: var(--dark-primary-color);
 }
 
 .footer-content {
@@ -1564,6 +1706,12 @@ h1, h2, h3, h4, h5, h6 {
     animation: fadeInUp 0.8s ease forwards;
 }
 
+/* Dark theme vision cards */
+[data-theme="dark"] .vision-card {
+    background: var(--dark-bg-secondary);
+    box-shadow: 0 15px 50px var(--dark-shadow-light);
+}
+
 .vision-card:nth-child(2) {
     animation-delay: 0.3s;
 }
@@ -1690,6 +1838,12 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
     position: relative;
+}
+
+/* Dark theme experience cards */
+[data-theme="dark"] .experience-card {
+    background: var(--dark-bg-secondary);
+    box-shadow: 0 15px 50px var(--dark-shadow-light);
 }
 
 .experience-card.highlight {
@@ -1949,6 +2103,12 @@ h1, h2, h3, h4, h5, h6 {
     border: 2px solid transparent;
 }
 
+/* Dark theme sport cards */
+[data-theme="dark"] .sport-card {
+    background: var(--dark-bg-secondary);
+    box-shadow: 0 8px 30px var(--dark-shadow-light);
+}
+
 .sport-card:hover {
     transform: translateY(-8px) scale(1.05);
     box-shadow: 0 15px 50px var(--shadow-medium);
@@ -1993,6 +2153,12 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 40px var(--shadow-light);
     margin-bottom: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark theme interest cards */
+[data-theme="dark"] .interest-card {
+    background: var(--dark-bg-tertiary);
+    box-shadow: 0 10px 40px var(--dark-shadow-light);
 }
 
 .interest-card:hover {
@@ -2050,6 +2216,12 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 40px var(--shadow-light);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark theme connection cards */
+[data-theme="dark"] .connection-card {
+    background: var(--dark-bg-secondary);
+    box-shadow: 0 10px 40px var(--dark-shadow-light);
 }
 
 .connection-card:hover {
@@ -2223,6 +2395,17 @@ h1, h2, h3, h4, h5, h6 {
     [data-animation="scale-in"] {
         transform: scale(0.9);
     }
+
+    /* Mobile Theme Toggle */
+    .theme-toggle-item {
+        margin-left: 0.5rem;
+    }
+
+    .theme-toggle-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2273,4 +2456,11 @@ h1, h2, h3, h4, h5, h6 {
     [data-delay="0.3"] { transition-delay: 0.15s; }
     [data-delay="0.4"] { transition-delay: 0.2s; }
     [data-delay="0.5"] { transition-delay: 0.25s; }
+
+    /* Small Mobile Theme Toggle */
+    .theme-toggle-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
 }
