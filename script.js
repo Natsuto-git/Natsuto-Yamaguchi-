@@ -433,5 +433,63 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.opacity = '1';
     }, 100);
 
+    // 3D Mouse Follow Effect (Desktop only)
+    const cards3d = document.querySelectorAll('.card-3d-enhanced');
+    
+    cards3d.forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            // Only apply 3D effect on desktop
+            if (window.innerWidth > 768) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `
+                    translateY(-15px) 
+                    scale(1.02) 
+                    rotateX(${rotateX}deg) 
+                    rotateY(${rotateY}deg)
+                `;
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            card.style.transform = 'translateY(0) scale(1) rotateX(0deg) rotateY(0deg)';
+        });
+
+        // Touch effect for mobile
+        card.addEventListener('touchstart', function() {
+            if (window.innerWidth <= 768) {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            }
+        });
+
+        card.addEventListener('touchend', function() {
+            if (window.innerWidth <= 768) {
+                this.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+    });
+
+    // Enhanced hover effects for skill tags (updated)
+    const skillTagsEnhanced = document.querySelectorAll('.skill-tag');
+    skillTagsEnhanced.forEach(tag => {
+        tag.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.1) rotate(2deg)';
+            this.style.boxShadow = '0 10px 25px var(--shadow-medium)';
+        });
+
+        tag.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+            this.style.boxShadow = '0 5px 15px var(--shadow-light)';
+        });
+    });
+
     console.log('🎉 Natsuto Yamaguchi Portfolio loaded successfully!');
 });

@@ -140,6 +140,77 @@
     }
 }
 
+/* 3D Hover Effects */
+.card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-3d:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 
+        0 20px 40px var(--shadow-medium),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced 3D Card with Mouse Follow */
+.card-3d-enhanced {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-3d-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.05) 50%, 
+        transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card-3d-enhanced:hover::before {
+    opacity: 1;
+}
+
+.card-3d-enhanced:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 
+        0 25px 50px var(--shadow-heavy),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Dark theme 3D cards */
+[data-theme="dark"] .card-3d:hover {
+    box-shadow: 
+        0 20px 40px var(--dark-shadow-medium),
+        0 0 0 1px rgba(74, 158, 255, 0.2);
+}
+
+[data-theme="dark"] .card-3d-enhanced:hover {
+    box-shadow: 
+        0 25px 50px var(--dark-shadow-heavy),
+        0 0 0 1px rgba(74, 158, 255, 0.3);
+}
+
+[data-theme="dark"] .card-3d-enhanced::before {
+    background: linear-gradient(135deg, 
+        rgba(74, 158, 255, 0.1) 0%, 
+        rgba(74, 158, 255, 0.05) 50%, 
+        transparent 100%);
+}
+
 /* Base Styles */
 * {
     margin: 0;
@@ -2462,5 +2533,15 @@ h1, h2, h3, h4, h5, h6 {
         width: 32px;
         height: 32px;
         font-size: 0.8rem;
+    }
+
+    /* Mobile 3D Effects */
+    .card-3d:hover,
+    .card-3d-enhanced:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    .card-3d-enhanced::before {
+        display: none;
     }
 }
