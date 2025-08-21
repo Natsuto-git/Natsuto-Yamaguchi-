@@ -60,54 +60,104 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Intersection Observer for animations
+    // Enhanced Intersection Observer for scroll animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
 
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const animationObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
+                const element = entry.target;
+                const animationType = element.getAttribute('data-animation');
+                const delay = element.getAttribute('data-delay');
+                
+                // Skip animations if user prefers reduced motion
+                if (prefersReducedMotion) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'none';
+                    return;
+                }
+                
+                // Apply delay if specified
+                if (delay) {
+                    setTimeout(() => {
+                        element.classList.add('animated');
+                    }, parseFloat(delay) * 1000);
+                } else {
+                    element.classList.add('animated');
+                }
                 
                 // Special handling for staggered animations
-                if (entry.target.classList.contains('skills-grid')) {
-                    const skillCategories = entry.target.querySelectorAll('.skill-category');
+                if (element.classList.contains('skills-grid')) {
+                    const skillCategories = element.querySelectorAll('.skill-category');
                     skillCategories.forEach((category, index) => {
                         setTimeout(() => {
-                            category.style.animationDelay = `${index * 0.2}s`;
-                            category.classList.add('animate');
-                        }, index * 100);
+                            category.classList.add('animated');
+                        }, index * 200);
                     });
                 }
 
-                if (entry.target.classList.contains('about-highlights')) {
-                    const highlights = entry.target.querySelectorAll('.highlight-item');
+                if (element.classList.contains('about-highlights')) {
+                    const highlights = element.querySelectorAll('.highlight-item');
                     highlights.forEach((highlight, index) => {
                         setTimeout(() => {
-                            highlight.style.animationDelay = `${index * 0.2}s`;
-                            highlight.classList.add('animate');
+                            highlight.classList.add('animated');
                         }, index * 150);
                     });
                 }
 
-                if (entry.target.classList.contains('timeline')) {
-                    const timelineItems = entry.target.querySelectorAll('.timeline-item');
-                    timelineItems.forEach((item, index) => {
+                if (element.classList.contains('sports-grid')) {
+                    const sportCards = element.querySelectorAll('.sport-card');
+                    sportCards.forEach((card, index) => {
                         setTimeout(() => {
-                            item.style.animationDelay = `${index * 0.3}s`;
-                            item.classList.add('animate');
+                            card.classList.add('animated');
+                        }, index * 150);
+                    });
+                }
+
+                if (element.classList.contains('learning-cards')) {
+                    const learningCards = element.querySelectorAll('.learning-card');
+                    learningCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animated');
                         }, index * 200);
+                    });
+                }
+
+                if (element.classList.contains('connection-cards')) {
+                    const connectionCards = element.querySelectorAll('.connection-card');
+                    connectionCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animated');
+                        }, index * 200);
+                    });
+                }
+
+                if (element.classList.contains('other-interests')) {
+                    const interestCards = element.querySelectorAll('.interest-card');
+                    interestCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animated');
+                        }, index * 300);
                     });
                 }
             }
         });
     }, observerOptions);
 
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.section-title, .section-divider, .about-card, .skills-grid, .about-highlights, .timeline, .contact-content');
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach(element => {
+        // Initialize elements for reduced motion
+        if (prefersReducedMotion) {
+            element.style.opacity = '1';
+            element.style.transform = 'none';
+        }
         animationObserver.observe(element);
     });
 
