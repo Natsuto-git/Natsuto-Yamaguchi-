@@ -211,6 +211,107 @@
         transparent 100%);
 }
 
+/* Skill Progress Bars */
+.skill-progress {
+    margin: 1rem 0;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+.skill-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    min-width: 80px;
+}
+
+.skill-level {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.progress-container {
+    flex: 1;
+    height: 8px;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 1rem;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 10px;
+    width: 0%;
+    transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        transparent 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.progress-percentage {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Dark theme progress bars */
+[data-theme="dark"] .progress-container {
+    background: var(--dark-bg-tertiary);
+}
+
+[data-theme="dark"] .progress-bar {
+    background: var(--dark-gradient-primary);
+}
+
+[data-theme="dark"] .progress-percentage {
+    color: var(--dark-primary-color);
+}
+
+[data-theme="dark"] .skill-name {
+    color: var(--dark-text-primary);
+}
+
+[data-theme="dark"] .skill-level {
+    color: var(--dark-text-light);
+}
+
 /* Base Styles */
 * {
     margin: 0;
@@ -2535,6 +2636,20 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 0.8rem;
     }
 
+    /* Small Mobile Progress Bars */
+    .skill-name {
+        font-size: 0.8rem;
+        min-width: 60px;
+    }
+
+    .skill-level {
+        font-size: 0.7rem;
+    }
+
+    .progress-percentage {
+        font-size: 0.7rem;
+    }
+
     /* Mobile 3D Effects */
     .card-3d:hover,
     .card-3d-enhanced:hover {
@@ -2543,5 +2658,26 @@ h1, h2, h3, h4, h5, h6 {
 
     .card-3d-enhanced::before {
         display: none;
+    }
+
+    /* Mobile Progress Bars */
+    .skill-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .skill-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .progress-container {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .progress-percentage {
+        align-self: flex-end;
     }
 }

@@ -491,5 +491,52 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Skill Progress Bar Animation
+    const progressBars = document.querySelectorAll('.progress-bar');
+    
+    const progressObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBar = entry.target;
+                const percentage = progressBar.getAttribute('data-percentage');
+                
+                // Animate progress bar
+                setTimeout(() => {
+                    progressBar.style.width = percentage + '%';
+                }, 500);
+                
+                // Unobserve after animation
+                progressObserver.unobserve(progressBar);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    // Observe all progress bars
+    progressBars.forEach(bar => {
+        progressObserver.observe(bar);
+    });
+
+    // Enhanced progress bar hover effects
+    const skillItems = document.querySelectorAll('.skill-item');
+    skillItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const progressBar = this.querySelector('.progress-bar');
+            const percentage = this.querySelector('.progress-percentage');
+            
+            // Add glow effect
+            progressBar.style.boxShadow = '0 0 10px var(--primary-color)';
+            percentage.style.transform = 'scale(1.1)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            const progressBar = this.querySelector('.progress-bar');
+            const percentage = this.querySelector('.progress-percentage');
+            
+            // Remove glow effect
+            progressBar.style.boxShadow = 'none';
+            percentage.style.transform = 'scale(1)';
+        });
+    });
+
     console.log('🎉 Natsuto Yamaguchi Portfolio loaded successfully!');
 });
