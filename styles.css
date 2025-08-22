@@ -637,8 +637,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     background: 
+        url('images/web/webp/background1.webp') center/cover no-repeat,
         radial-gradient(circle at 20% 80%, rgba(19, 83, 137, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(111, 120, 157, 0.08) 0%, transparent 50%);
+    opacity: 0.25;
+    filter: blur(2px);
     pointer-events: none;
 }
 
@@ -873,7 +876,21 @@ h1, h2, h3, h4, h5, h6 {
 /* About Section */
 .about-section {
     padding: 6rem 0;
-    background: var(--white);
+    background: transparent;
+    position: relative;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/web/webp/background2.webp') center/cover no-repeat;
+    opacity: 0.4;
+    filter: blur(1px);
+    z-index: -1;
 }
 
 .about-content {
@@ -976,6 +993,20 @@ h1, h2, h3, h4, h5, h6 {
 .skills-section {
     padding: 6rem 0;
     background: var(--bg-secondary);
+    position: relative;
+}
+
+.skills-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/web/webp/background5.webp') center/cover no-repeat;
+    opacity: 0.3;
+    filter: blur(1px);
+    z-index: -1;
 }
 
 .skills-grid {
@@ -1063,6 +1094,20 @@ h1, h2, h3, h4, h5, h6 {
 .experience-section {
     padding: 6rem 0;
     background: var(--white);
+    position: relative;
+}
+
+.experience-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/web/webp/background4.webp') center/cover no-repeat;
+    opacity: 0.3;
+    filter: blur(1px);
+    z-index: -1;
 }
 
 .timeline {
@@ -1867,6 +1912,20 @@ h1, h2, h3, h4, h5, h6 {
 .vision-section {
     padding: 6rem 0;
     background: var(--bg-secondary);
+    position: relative;
+}
+
+.vision-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/web/webp/background3.webp') center/cover no-repeat;
+    opacity: 0.3;
+    filter: blur(1px);
+    z-index: -1;
 }
 
 .vision-main {
@@ -2242,6 +2301,20 @@ h1, h2, h3, h4, h5, h6 {
 .interests-section {
     padding: 6rem 0;
     background: var(--white);
+    position: relative;
+}
+
+.interests-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/web/webp/background6.webp') center/cover no-repeat;
+    opacity: 0.3;
+    filter: blur(1px);
+    z-index: -1;
 }
 
 .sports-section {
@@ -2688,5 +2761,65 @@ h1, h2, h3, h4, h5, h6 {
 
     .progress-percentage {
         align-self: flex-end;
+    }
+}
+
+/* Parallax Container */
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    will-change: transform;
+    z-index: -2;
+}
+
+/* Floating Elements */
+.floating-element {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.6;
+    animation: floatAnimation 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+.floating-element:nth-child(odd) {
+    animation-direction: reverse;
+    animation-duration: 8s;
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-3deg);
+    }
+    75% {
+        transform: translateY(-30px) rotate(7deg);
+    }
+}
+
+/* Mobile Parallax Effects - Disabled */
+@media (max-width: 768px) {
+    .parallax-bg {
+        display: none;
+    }
+
+    .floating-element {
+        display: none;
     }
 }

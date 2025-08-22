@@ -538,5 +538,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Parallax Effect
+    const parallaxBgs = document.querySelectorAll('.parallax-bg');
+    const floatingElements = document.querySelectorAll('.floating-element');
+    
+    let ticking = false;
+    
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        
+        // Update parallax backgrounds
+        parallaxBgs.forEach(bg => {
+            bg.style.transform = `translateY(${rate}px)`;
+        });
+        
+        // Update floating elements with different speeds
+        floatingElements.forEach((element, index) => {
+            const speed = (index + 1) * 0.3;
+            const yPos = scrolled * speed;
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+        
+        ticking = false;
+    }
+    
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }
+    
+    // Only apply parallax on desktop and if user doesn't prefer reduced motion
+    if (window.innerWidth > 768 && !prefersReducedMotion) {
+        window.addEventListener('scroll', requestTick);
+    }
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth <= 768 || prefersReducedMotion) {
+            // Reset parallax effects
+            parallaxBgs.forEach(bg => {
+                bg.style.transform = 'translateY(0)';
+            });
+            floatingElements.forEach(element => {
+                element.style.transform = 'translateY(0)';
+            });
+        }
+    });
+
     console.log('🎉 Natsuto Yamaguchi Portfolio loaded successfully!');
 });

@@ -14,11 +14,11 @@
     <meta property="og:title" content="山口夏翔 | Natsuto Yamaguchi - Portfolio">
     <meta property="og:description" content="19歳フリーランサー山口夏翔の自己紹介サイト。人間力と情熱、行動力で学歴を圧倒することを目標に、若者から新しい社会づくりを積極的に行っていける社会を目指す。">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="profile.svg">
+    <meta property="og:image" content="images/web/icon.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="山口夏翔 | Natsuto Yamaguchi">
     <meta name="twitter:description" content="19歳フリーランサー。最強のポジティブ思考力で挑戦を続ける。">
-    <link rel="icon" type="image/svg+xml" href="profile.svg">
+    <link rel="icon" type="image/jpeg" href="images/web/favicon.jpg">
     <title>山口夏翔 | Natsuto Yamaguchi - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -35,7 +35,10 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">
-                <img src="profile.jpg" alt="NY" class="nav-logo-img">
+                <picture>
+                    <source srcset="images/web/webp/icon.webp" type="image/webp">
+                    <img src="images/web/icon.jpg" alt="NY" class="nav-logo-img">
+                </picture>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
@@ -75,12 +78,25 @@
     </nav>
 
     <main>
-        <section id="home" class="hero-section">
+        <section id="home" class="hero-section parallax-container">
+            <div class="parallax-bg"></div>
+            <div class="floating-element" style="top: 10%; left: 10%; font-size: 2rem; color: var(--primary-color);">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="floating-element" style="top: 20%; right: 15%; font-size: 1.5rem; color: var(--accent-color);">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="floating-element" style="bottom: 30%; left: 20%; font-size: 1.8rem; color: var(--secondary-color);">
+                <i class="fas fa-rocket"></i>
+            </div>
             <div class="hero-container">
                 <div class="hero-content">
                     <div class="profile-image-container">
                         <div class="profile-image">
-                            <img src="profile.jpg" alt="Natsuto Yamaguchi" id="profileImg">
+                            <picture>
+                                <source srcset="images/web/webp/icon.webp" type="image/webp">
+                                <img src="images/web/icon.jpg" alt="Natsuto Yamaguchi" id="profileImg">
+                            </picture>
                         </div>
                     </div>
                     <div class="hero-text">
