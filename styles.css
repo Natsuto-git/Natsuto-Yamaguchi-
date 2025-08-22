@@ -937,6 +937,8 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
     border-radius: 50%;
     transition: transform 0.3s ease;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .profile-image:hover img {
@@ -1024,6 +1026,8 @@ button, a, .card, .skill-category, .highlight-item {
     background-clip: padding-box;
     opacity: 0.9;
     isolation: isolate;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .name-signature:hover {
