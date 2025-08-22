@@ -477,19 +477,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     transition: transform 0.3s ease;
+}
+
+.nav-logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 .nav-logo:hover {
     transform: scale(1.1);
+}
+
+.nav-logo:hover .nav-logo-img {
+    border-color: var(--accent-color);
+    box-shadow: 0 6px 20px var(--shadow-medium);
 }
 
 .nav-menu {
