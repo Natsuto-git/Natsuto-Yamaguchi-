@@ -696,6 +696,12 @@ h1, h2, h3, h4, h5, h6 {
     height: 70px;
 }
 
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .nav-logo {
     display: flex;
     align-items: center;
@@ -770,72 +776,156 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 2px;
 }
 
-/* Theme Toggle Button */
-.theme-toggle-item {
-    margin-left: 1rem;
+
+
+/* Language Dropdown */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.theme-toggle-btn {
-    background: none;
-    border: none;
+.lang-dropdown-btn {
+    background: rgba(30, 58, 138, 0.1);
+    border: 1px solid rgba(30, 58, 138, 0.2);
     cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
     transition: all 0.3s ease;
-    position: relative;
-    width: 40px;
-    height: 40px;
+    height: 32px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: var(--gradient-primary);
-    color: var(--white);
-    box-shadow: 0 2px 10px var(--shadow-light);
+    justify-content: space-between;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    backdrop-filter: blur(10px);
+    min-width: 80px;
+    gap: 0.5rem;
 }
 
-.theme-toggle-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px var(--shadow-medium);
+.lang-dropdown-btn:hover {
+    background: rgba(30, 58, 138, 0.15);
+    border-color: rgba(30, 58, 138, 0.3);
+    transform: translateY(-1px);
 }
 
-.theme-toggle-btn .light-icon,
-.theme-toggle-btn .dark-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.lang-dropdown-btn .lang-text {
     transition: all 0.3s ease;
-    font-size: 1.1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    white-space: nowrap;
 }
 
-.theme-toggle-btn .light-icon {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(0deg);
+.lang-dropdown-btn .fa-chevron-down {
+    font-size: 0.6rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
 }
 
-.theme-toggle-btn .dark-icon {
+.lang-dropdown.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border: 1px solid rgba(30, 58, 138, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-medium);
+    backdrop-filter: blur(15px);
     opacity: 0;
-    transform: translate(-50%, -50%) rotate(90deg);
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 4px;
+    overflow: hidden;
 }
 
-[data-theme="dark"] .theme-toggle-btn .light-icon {
-    opacity: 0;
-    transform: translate(-50%, -50%) rotate(-90deg);
-}
-
-[data-theme="dark"] .theme-toggle-btn .dark-icon {
+.lang-dropdown.active .lang-dropdown-menu {
     opacity: 1;
-    transform: translate(-50%, -50%) rotate(0deg);
+    visibility: visible;
+    transform: translateY(0);
 }
 
-/* Dark theme toggle button */
-[data-theme="dark"] .theme-toggle-btn {
-    background: var(--dark-gradient-primary);
-    box-shadow: 0 2px 10px var(--dark-shadow-light);
+.lang-option {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(30, 58, 138, 0.1);
 }
 
-[data-theme="dark"] .theme-toggle-btn:hover {
-    box-shadow: 0 4px 15px var(--dark-shadow-medium);
+.lang-option:last-child {
+    border-bottom: none;
+}
+
+.lang-option:hover {
+    background: rgba(30, 58, 138, 0.1);
+}
+
+.lang-option.active {
+    background: rgba(30, 58, 138, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.lang-flag {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.lang-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+/* Dark theme language dropdown */
+[data-theme="dark"] .lang-dropdown-btn {
+    background: rgba(96, 165, 250, 0.1);
+    border-color: rgba(96, 165, 250, 0.2);
+    color: var(--dark-primary-color);
+}
+
+[data-theme="dark"] .lang-dropdown-btn:hover {
+    background: rgba(96, 165, 250, 0.15);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+[data-theme="dark"] .lang-dropdown-btn .lang-text,
+[data-theme="dark"] .lang-dropdown-btn .fa-chevron-down {
+    color: var(--dark-primary-color);
+}
+
+[data-theme="dark"] .lang-dropdown-menu {
+    background: var(--dark-bg-secondary);
+    border-color: rgba(96, 165, 250, 0.2);
+    box-shadow: 0 4px 20px var(--dark-shadow-medium);
+}
+
+[data-theme="dark"] .lang-option {
+    border-bottom-color: rgba(96, 165, 250, 0.1);
+}
+
+[data-theme="dark"] .lang-option:hover {
+    background: rgba(96, 165, 250, 0.1);
+}
+
+[data-theme="dark"] .lang-option.active {
+    background: rgba(96, 165, 250, 0.1);
+    color: var(--dark-primary-color);
+}
+
+[data-theme="dark"] .lang-name {
+    color: var(--dark-text-primary);
 }
 
 /* Hero Section */
@@ -1091,6 +1181,27 @@ button, a, .card, .skill-category, .highlight-item {
     overflow: hidden;
     min-width: 140px;
     text-align: center;
+    cursor: pointer;
+}
+
+/* Ripple Effect */
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    pointer-events: none;
+}
+
+.cta-button:active::before {
+    width: 300px;
+    height: 300px;
 }
 
 .cta-button.primary {
@@ -1137,9 +1248,28 @@ button, a, .card, .skill-category, .highlight-item {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(0) translateY(0); }
-    40% { transform: translateX(0) translateY(-10px); }
-    60% { transform: translateX(0) translateY(-5px); }
+    0%, 20%, 50%, 80%, 100% { 
+        transform: translateX(0) translateY(0); 
+        opacity: 1;
+    }
+    40% { 
+        transform: translateX(0) translateY(-10px); 
+        opacity: 0.8;
+    }
+    60% { 
+        transform: translateX(0) translateY(-5px); 
+        opacity: 0.9;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.scroll-arrow i {
+    animation: bounce 2s infinite, pulse 3s infinite;
 }
 
 /* Section Animations */
@@ -1333,10 +1463,28 @@ button, a, .card, .skill-category, .highlight-item {
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 10px 40px var(--shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: translateY(30px);
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.skill-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s;
+}
+
+.skill-category:hover::before {
+    left: 100%;
 }
 
 /* Dark theme skill categories */
@@ -1667,6 +1815,7 @@ button, a, .card, .skill-category, .highlight-item {
         border-radius: 8px;
         margin: 0.25rem 1rem;
     }
+    
 
     .hamburger {
         display: flex;
@@ -1894,12 +2043,26 @@ button, a, .card, .skill-category, .highlight-item {
         margin: 1rem 0;
     }
 
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .experience-toggle-btn {
+        width: 35px;
+        height: 35px;
+        margin-left: 0;
+        align-self: flex-end;
+    }
+
     .experience-card h3 {
         font-size: 1.3rem;
         line-height: 1.4;
-        word-break: keep-all;
+        word-break: break-all;
         overflow-wrap: break-word;
         margin-bottom: 0.75rem;
+        hyphens: auto;
     }
 
     .experience-role {
@@ -1976,6 +2139,16 @@ button, a, .card, .skill-category, .highlight-item {
         margin: 1.5rem auto;
         word-break: keep-all;
         overflow-wrap: break-word;
+    }
+
+    /* Extra small mobile experience card optimization */
+    .experience-card h3 {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        word-break: break-all;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        max-width: 100%;
     }
 
     /* Overrides for hero CTA buttons on small mobile */
@@ -2429,10 +2602,76 @@ button, a, .card, .skill-category, .highlight-item {
     position: relative;
 }
 
+/* Experience Header with Toggle */
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.experience-basic-info {
+    flex: 1;
+}
+
+.experience-toggle-btn {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.experience-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px var(--shadow-heavy);
+}
+
+.experience-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.experience-toggle-btn.expanded i {
+    transform: rotate(180deg);
+}
+
+/* Experience Details Toggle */
+.experience-details {
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    max-height: 2000px;
+}
+
+.experience-details.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
 /* Dark theme experience cards */
 [data-theme="dark"] .experience-card {
     background: var(--dark-bg-secondary);
     box-shadow: 0 15px 50px var(--dark-shadow-light);
+}
+
+[data-theme="dark"] .experience-toggle-btn {
+    background: var(--dark-gradient-primary);
+    box-shadow: 0 4px 15px var(--dark-shadow-medium);
+}
+
+[data-theme="dark"] .experience-toggle-btn:hover {
+    box-shadow: 0 6px 20px var(--dark-shadow-heavy);
 }
 
 .experience-card.highlight {
@@ -3018,6 +3257,21 @@ button, a, .card, .skill-category, .highlight-item {
         height: 35px;
         font-size: 0.9rem;
     }
+    
+    .lang-dropdown-btn {
+        height: 28px !important;
+        padding: 0.3rem 0.6rem !important;
+        min-width: 70px !important;
+        font-size: 0.65rem !important;
+    }
+    
+    .lang-dropdown-btn .lang-text {
+        font-size: 0.65rem !important;
+    }
+    
+    .lang-dropdown-btn .fa-chevron-down {
+        font-size: 0.5rem !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -3069,11 +3323,29 @@ button, a, .card, .skill-category, .highlight-item {
     [data-delay="0.4"] { transition-delay: 0.2s; }
     [data-delay="0.5"] { transition-delay: 0.25s; }
 
-    /* Small Mobile Theme Toggle */
-    .theme-toggle-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 0.8rem;
+
+    
+    .lang-dropdown-btn {
+        height: 26px !important;
+        padding: 0.25rem 0.5rem !important;
+        min-width: 60px !important;
+        font-size: 0.6rem !important;
+    }
+    
+    .lang-dropdown-btn .lang-text {
+        font-size: 0.6rem !important;
+    }
+    
+    .lang-dropdown-btn .fa-chevron-down {
+        font-size: 0.45rem !important;
+    }
+    
+    .lang-flag {
+        font-size: 0.8rem !important;
+    }
+    
+    .lang-name {
+        font-size: 0.65rem !important;
     }
 
     /* Small Mobile Progress Bars */

@@ -9,15 +9,40 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="山口夏翔（Natsuto Yamaguchi）の自己紹介・ポートフォリオサイト。19歳フリーランサーの経験・スキル・価値観を紹介。人間力と情熱、行動力で学歴を圧倒することを目標に活動中。">
-    <meta name="keywords" content="山口夏翔, Natsuto Yamaguchi, フリーランス, ポートフォリオ, 兵庫県, 生徒会長, インターアクト, ENFJ, 若者支援">
+    <meta name="keywords" content="山口夏翔, Natsuto Yamaguchi, フリーランス, ポートフォリオ, 兵庫県, 生徒会長, インターアクト, ENFJ, 若者支援, リーダーシップ, 社会貢献, 英語, 中国語, AI活用">
     <meta name="author" content="Natsuto Yamaguchi">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="ja">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://natsuto-yamaguchi.com/">
     <meta property="og:title" content="山口夏翔 | Natsuto Yamaguchi - Portfolio">
     <meta property="og:description" content="19歳フリーランサー山口夏翔の自己紹介サイト。人間力と情熱、行動力で学歴を圧倒することを目標に、若者から新しい社会づくりを積極的に行っていける社会を目指す。">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/web/icon.jpg">
+    <meta property="og:image" content="https://natsuto-yamaguchi.com/images/web/icon.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="山口夏翔 | Natsuto Yamaguchi">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://natsuto-yamaguchi.com/">
     <meta name="twitter:title" content="山口夏翔 | Natsuto Yamaguchi">
     <meta name="twitter:description" content="19歳フリーランサー。最強のポジティブ思考力で挑戦を続ける。">
+    <meta name="twitter:image" content="https://natsuto-yamaguchi.com/images/web/icon.jpg">
+    <meta name="twitter:creator" content="@__natsuto_">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#1E3A8A">
+    <meta name="msapplication-TileColor" content="#1E3A8A">
+    <meta name="apple-mobile-web-app-title" content="Natsuto Yamaguchi">
+    <meta name="application-name" content="Natsuto Yamaguchi Portfolio">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://natsuto-yamaguchi.com/">
     <link rel="icon" type="image/jpeg" href="images/web/icon.jpg">
     <title>山口夏翔 | Natsuto Yamaguchi - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
@@ -34,36 +59,52 @@
 
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <img src="images/web/icon.jpg" alt="NY" class="nav-logo-img">
-            </a>
+            <div class="nav-left">
+                <a href="#home" class="nav-logo">
+                    <img src="images/web/icon.jpg" alt="NY" class="nav-logo-img" loading="lazy">
+                </a>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-dropdown-btn" id="langToggle" aria-label="言語切り替え">
+                        <span class="lang-text">日本語</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown-menu" id="langDropdownMenu">
+                        <div class="lang-option" data-lang="ja">
+                            <span class="lang-flag">🇯🇵</span>
+                            <span class="lang-name">日本語</span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span class="lang-flag">🇺🇸</span>
+                            <span class="lang-name">English</span>
+                        </div>
+                        <div class="lang-option" data-lang="zh">
+                            <span class="lang-flag">🇨🇳</span>
+                            <span class="lang-name">中文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#home" class="nav-link" data-ja="ホーム" data-en="Home" data-zh="首页">ホーム</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                    <a href="#about" class="nav-link" data-ja="About" data-en="About" data-zh="关于我">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#vision" class="nav-link">Vision</a>
+                    <a href="#vision" class="nav-link" data-ja="ビジョン" data-en="Vision" data-zh="理想与目标">ビジョン</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#experience" class="nav-link" data-ja="経験" data-en="Experience" data-zh="经历">経験</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#skills" class="nav-link" data-ja="スキル" data-en="Skills" data-zh="技能">スキル</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#interests" class="nav-link">Interests</a>
+                    <a href="#interests" class="nav-link" data-ja="趣味" data-en="Interests" data-zh="兴趣爱好">趣味</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-                <li class="nav-item theme-toggle-item">
-                    <button class="theme-toggle-btn" id="themeToggle" aria-label="テーマ切り替え">
-                        <i class="fas fa-sun light-icon"></i>
-                        <i class="fas fa-moon dark-icon"></i>
-                    </button>
+                    <a href="#contact" class="nav-link" data-ja="お問い合わせ" data-en="Contact" data-zh="联系我">お問い合わせ</a>
                 </li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -81,26 +122,26 @@
                 <div class="hero-content">
                     <div class="profile-image-container">
                         <div class="profile-image">
-                            <img src="images/web/icon.jpg" alt="Natsuto Yamaguchi" id="profileImg">
+                            <img src="images/web/icon.jpg" alt="Natsuto Yamaguchi" id="profileImg" loading="lazy">
                         </div>
                     </div>
                     <div class="hero-text">
                         <h1 class="hero-title">
                             <div class="hero-name-image">
-                                <img src="images/web/name-signature.png" alt="山口 夏翔" class="name-signature">
+                                <img src="images/web/name-signature.png" alt="山口 夏翔" class="name-signature" loading="lazy">
                             </div>
                             <span class="hero-name-en">Yamaguchi Natsuto</span>
                         </h1>
-                        <p class="hero-subtitle">
+                        <p class="hero-subtitle" data-ja="19歳、兵庫県在住 | 挑戦することが大好きな自由人です" data-en="19 years old, from Hyogo | A free spirit who loves challenges" data-zh="19岁，来自兵庫县 | 热爱挑战的自由灵魂">
                             19歳、兵庫県在住 | 挑戦することが大好きな自由人です
                         </p>
                         <div class="hero-quote">
                             <i class="fas fa-quote-left"></i>
-                            <span>ワクワクする道を選んで、その道を正解にしていく</span>
+                            <span data-ja="ワクワクする道を選んで、その道を正解にしていく" data-en="Choose the path that excites you, and make it the right one" data-zh="选择让你心动的道路，将其变成正确的道路">ワクワクする道を選んで、その道を正解にしていく</span>
                         </div>
                         <div class="hero-cta">
-                            <a href="#about" class="cta-button primary">About Me</a>
-                            <a href="#contact" class="cta-button secondary">Contact</a>
+                            <a href="#about" class="cta-button primary" data-ja="私について" data-en="About Me" data-zh="关于我">私について</a>
+                            <a href="#contact" class="cta-button secondary" data-ja="お問い合わせ" data-en="Contact" data-zh="联系我">お問い合わせ</a>
                         </div>
                     </div>
                 </div>
@@ -115,7 +156,7 @@
         <section id="about" class="about-section">
             <div class="container">
                 <div class="section-header animate-on-scroll" data-animation="fade-in-up">
-                    <h2 class="section-title">About Me</h2>
+                    <h2 class="section-title" data-ja="About Me" data-en="About Me" data-zh="关于我">About Me</h2>
                     <div class="section-divider"></div>
                 </div>
                 <div class="about-content">
@@ -124,12 +165,12 @@
                             <div class="card-icon">
                                 <i class="fas fa-user-circle"></i>
                             </div>
-                            <h3>僕について</h3>
+                            <h3 data-ja="僕について" data-en="About Me" data-zh="关于我">僕について</h3>
                             <p>
-                                僕は山口夏翔、19歳です！兵庫県で生まれ育って、今はフリーランスとして色々なことに挑戦しています。
-                                ENFJ（主人公）タイプらしく、人とのつながりを大切にしながら、自分なりのペースで成長していきたいと思っています。
+                                <span data-ja="僕は山口夏翔、19歳です！兵庫県で生まれ育って、今はフリーランスとして色々なことに挑戦しています。ENFJ（主人公）タイプらしく、人とのつながりを大切にしながら、自分なりのペースで成長していきたいと思っています。" data-en="I'm Natsuto Yamaguchi, 19 years old! Born and raised in Hyogo Prefecture, I'm currently freelancing and challenging myself in various fields. As an ENFJ (protagonist) type, I value connections with people while growing at my own pace." data-zh="我是山口夏翔，19岁！在兵库县出生长大，现在作为自由职业者在各个领域挑战自己。作为ENFJ（主人公）类型，我希望在珍视与人的联系的同时，以自己的节奏成长。">僕は山口夏翔、19歳です！兵庫県で生まれ育って、今はフリーランスとして色々なことに挑戦しています。
+                                ENFJ（主人公）タイプらしく、人とのつながりを大切にしながら、自分なりのペースで成長していきたいと思っています。</span>
                             </p>
-                            <p>
+                            <p data-ja="学歴より大事なのは、どれだけ本気で取り組んできたか、どれだけ人として成長できたかだと考えています。YouTuberのヒカルさんの「なりたいものになれるのはなろうとしたものだけ」「心配すんな全部上手くいく」という言葉に背中を押されて、失敗を恐れずに挑戦し続けています。" data-en="What matters more than academic credentials is how seriously you've tackled challenges and how much you've grown as a person. Inspired by YouTuber Hikaru's words 'You can only become what you try to become' and 'Don't worry, everything will work out,' I continue to challenge myself without fear of failure." data-zh="比学历更重要的是，你有多认真地面对挑战，作为一个人成长了多少。受到YouTuber光君的话语「只有努力成为的人才能成为想要成为的人」「别担心，一切都会顺利的」鼓舞，我不怕失败，持续挑战自己。">
                                 学歴より大事なのは、どれだけ本気で取り組んできたか、どれだけ人として成長できたかだと考えています。
                                 YouTuberのヒカルさんの「なりたいものになれるのはなろうとしたものだけ」「心配すんな全部上手くいく」
                                 という言葉に背中を押されて、失敗を恐れずに挑戦し続けています。
@@ -140,8 +181,8 @@
                             <div class="card-icon">
                                 <i class="fas fa-lightbulb"></i>
                             </div>
-                            <h3>人とのつながりで大切にしていること</h3>
-                            <p>
+                            <h3 data-ja="人とのつながりで大切にしていること" data-en="What I Value in Human Connections" data-zh="在人际关系中珍视的事情">人とのつながりで大切にしていること</h3>
+                            <p data-ja="人と話すときは、その人の良いところを見つけるのが好きです。みんな違って、みんないい。そんな気持ちで接していると、自然と仲良くなれるし、お互いに学び合えることがたくさんあります。新しい出会いがあると、「この人はどんな考えを持っているんだろう」とワクワクしちゃいます。" data-en="When talking with people, I love finding their good qualities. Everyone is different, and that's wonderful. With this mindset, I naturally become close with others and we learn so much from each other. When I meet new people, I get excited thinking 'What kind of perspectives does this person have?'" data-zh="与人交谈时，我喜欢发现对方的优点。每个人都不同，每个人都很棒。用这样的心态与人相处，自然就能亲近起来，彼此能够学到很多东西。遇到新的人时，我会兴奋地想'这个人有什么样的想法呢'。">
                                 人と話すときは、その人の良いところを見つけるのが好きです。みんな違って、みんないい。
                                 そんな気持ちで接していると、自然と仲良くなれるし、お互いに学び合えることがたくさんあります。
                                 新しい出会いがあると、「この人はどんな考えを持っているんだろう」とワクワクしちゃいます。
@@ -155,8 +196,8 @@
                                 <i class="fas fa-heart"></i>
                                 </div>
                                 <div class="highlight-content">
-                                <h4>前向きな考え方</h4>
-                                <p>うまくいかないことも「次に活かせる経験」だと思ってます</p>
+                                <h4 data-ja="前向きな考え方" data-en="Positive Mindset" data-zh="积极的思维方式">前向きな考え方</h4>
+                                <p data-ja="うまくいかないことも「次に活かせる経験」だと思ってます" data-en="I see even setbacks as 'experiences I can use next time'" data-zh="即使是不顺利的事情，我也认为是「下次可以活用的经验」">うまくいかないことも「次に活かせる経験」だと思ってます</p>
                             </div>
                         </div>
                         <div class="highlight-item animate-on-scroll" data-animation="scale-in" data-delay="0.2">
@@ -164,8 +205,8 @@
                                 <i class="fas fa-rocket"></i>
                             </div>
                             <div class="highlight-content">
-                                <h4>とりあえずやってみる精神</h4>
-                                <p>迷ったら動く！やりながら考えるタイプです</p>
+                                <h4 data-ja="とりあえずやってみる精神" data-en="Just Try It Spirit" data-zh="先试试看的精神">とりあえずやってみる精神</h4>
+                                <p data-ja="迷ったら动く！やりながら考えるタイプです" data-en="When in doubt, take action! I'm the type who thinks while doing" data-zh="迷茫时就行动！我是边做边思考的类型">迷ったら動く！やりながら考えるタイプです</p>
                                 </div>
                             </div>
                             <div class="highlight-item animate-on-scroll" data-animation="scale-in" data-delay="0.3">
@@ -173,8 +214,8 @@
                                     <i class="fas fa-users"></i>
                                 </div>
                                 <div class="highlight-content">
-                                <h4>人とのつながりが宝物</h4>
-                                <p>色んな人の話を聞くのが大好き、価値観の違いが面白い</p>
+                                <h4 data-ja="人とのつながりが宝物" data-en="Human Connections Are Treasures" data-zh="人际关系是珍宝">人とのつながりが宝物</h4>
+                                <p data-ja="色んな人の話を聞くのが大好き、価値観の違いが面白い" data-en="I love listening to different people's stories; diverse perspectives are fascinating" data-zh="我很喜欢听各种人的故事，价值观的差异很有趣">色んな人の話を聞くのが大好き、価値観の違いが面白い</p>
                             </div>
                         </div>
                     </div>
@@ -186,7 +227,7 @@
             <div class="parallax-bg"></div>
             <div class="container">
                 <div class="section-header animate-on-scroll" data-animation="fade-in-up">
-                    <h2 class="section-title">Vision & Goals</h2>
+                    <h2 class="section-title" data-ja="ビジョンと目標" data-en="Vision & Goals" data-zh="理想与目标">ビジョンと目標</h2>
                     <div class="section-divider"></div>
                 </div>
                 <div class="vision-content">
@@ -195,11 +236,11 @@
                             <div class="vision-icon">
                                 <i class="fas fa-trophy"></i>
                             </div>
-                            <h3>僕の夢と目標</h3>
-                            <p class="vision-statement">
+                            <h3 data-ja="僕の夢と目標" data-en="My Dreams and Goals" data-zh="我的梦想与目标">僕の夢と目標</h3>
+                            <p class="vision-statement" data-ja="学歴じゃなくて、人間力と行動力で勝負していきたい。" data-en="I want to compete not with academic credentials, but with human strength and action." data-zh="我希望不是凭学历，而是用人格魅力和行动力来竞争。">
                                 学歴じゃなくて、人間力と行動力で勝負していきたい。
                             </p>
-                            <p>
+                            <p data-ja="正直、学歴コンプレックスもありました。でも気づいたんです。大事なのは今何をしているか、どんな人として成長しているかってこと。実際に行動して、結果を出して、人とのつながりを大切にしていれば、きっと社会に貢献できる人間になれると信じています。" data-en="Honestly, I had academic complexes too. But I realized what's important is what you're doing now and how you're growing as a person. I believe that by taking action, producing results, and valuing human connections, I can become someone who contributes to society." data-zh="说实话，我也曾经有学历情结。但我明白了一点：重要的是现在在做什么，作为一个人在如何成长。我相信，只要实际行动，创造成果，珍视人际关系，就一定能成为对社会有贡献的人。">
                                 正直、学歴コンプレックスもありました。でも気づいたんです。大事なのは今何をしているか、
                                 どんな人として成長しているかってこと。実際に行動して、結果を出して、
                                 人とのつながりを大切にしていれば、きっと社会に貢献できる人間になれると信じています。
@@ -210,13 +251,13 @@
                             <div class="vision-icon">
                                 <i class="fas fa-seedling"></i>
                             </div>
-                            <h3>社会をもっと良くしたい</h3>
-                            <p>
+                            <h3 data-ja="社会をもっと良くしたい" data-en="Making Society Better" data-zh="让社会变得更美好">社会をもっと良くしたい</h3>
+                            <p data-ja="「意識高い系」って言葉、ちょっと嫌いなんです。頑張ろうとしてる若者を冷やかすような雰囲気、もったいないと思いませんか？そういう人たちがもっと堂々と夢を語れて、お互いに支え合えるような環境を作りたいんです。" data-en="I really dislike the term 'pretentious idealist.' Isn't it a waste when we mock young people who are trying to work hard? I want to create an environment where such people can boldly share their dreams and support each other." data-zh="我有点讨厌'意识高系'这个词。嘲笑努力的年轻人的氛围，不觉得很可惜吗？我想创造一个让这样的人能够堂堂正正地谈论梦想，彼此支持的环境。">
                                 「意識高い系」って言葉、ちょっと嫌いなんです。頑張ろうとしてる若者を冷やかすような雰囲気、
                                 もったいないと思いませんか？そういう人たちがもっと堂々と夢を語れて、
                                 お互いに支え合えるような環境を作りたいんです。
                             </p>
-                            <p>
+                            <p data-ja="「やりたいことはあるけど、何から始めればいいかわからない」って人、きっと多いと思います。僕もそうでした。そんな人たちの背中を押せるような、みんなで一緒に成長していけるようなつながりを作っていきたいです。" data-en="I think there are many people who say 'I have things I want to do, but I don't know where to start.' I was the same way. I want to create connections that can support such people and help us all grow together." data-zh="我想有很多人会说'虽然有想做的事情，但不知道从哪里开始'。我也曾经这样。我想创造能够支持这样的人，大家一起成长的联系。">
                                 「やりたいことはあるけど、何から始めればいいかわからない」って人、きっと多いと思います。
                                 僕もそうでした。そんな人たちの背中を押せるような、みんなで一緒に成長していけるような
                                 つながりを作っていきたいです。
@@ -233,7 +274,7 @@
             <div class="parallax-bg"></div>
             <div class="container">
                 <div class="section-header animate-on-scroll" data-animation="fade-in-up">
-                    <h2 class="section-title">Experience & Achievements</h2>
+                    <h2 class="section-title" data-ja="経験と実績" data-en="Experience & Achievements" data-zh="经历与成就">経験と実績</h2>
                     <div class="section-divider"></div>
                 </div>
                 <div class="experience-content">
@@ -241,17 +282,24 @@
                         <div class="experience-item">
                             <div class="experience-marker"></div>
                             <div class="experience-card">
-                                <div class="experience-date">2024 - Present</div>
-                                <h3>フリーランス活動 & 継続学習</h3>
-                                <p class="experience-role">フリーランス | 継続的スキル向上</p>
-                                <div class="experience-details">
-                                    <p>現在、多方面でのスキル習得と実践的な経験を通じて、継続的な成長を目指しています。</p>
+                                <div class="experience-header">
+                                    <div class="experience-basic-info">
+                                        <div class="experience-date">2024 - Present</div>
+                                        <h3 data-ja="フリーランス活動 & 継続学習" data-en="Freelance Activities & Continuous Learning" data-zh="自由职业活动与持续学习">フリーランス活動 & 継続学習</h3>
+                                        <p class="experience-role" data-ja="フリーランス | 継続的スキル向上" data-en="Freelancer | Continuous Skill Development" data-zh="自由职业者 | 持续技能提升">フリーランス | 継続的スキル向上</p>
+                                    </div>
+                                    <button class="experience-toggle-btn" aria-label="詳細を表示">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div class="experience-details collapsed">
+                                    <p data-ja="現在、多方面でのスキル習得と実践的な経験を通じて、継続的な成長を目指しています。" data-en="Currently pursuing continuous growth through skill acquisition and practical experience across multiple domains." data-zh="目前，我通过多领域的技能学习和实践经验，致力于持续成长。">現在、多方面でのスキル習得と実践的な経験を通じて、継続的な成長を目指しています。</p>
                                     <ul class="achievement-list">
-                                        <li>英語力向上（TOEFL iBT MyBest Score 80点達成）</li>
-                                        <li>中国語学習を継続中</li>
-                                        <li>ビジネス実務法務検定の勉強中</li>
-                                        <li>AI ツールの日常的な活用と研究</li>
-                                        <li>様々な分野の知識とスキルの統合</li>
+                                        <li data-ja="英語力向上（TOEFL iBT MyBest Score 80点達成）" data-en="English proficiency improvement (TOEFL iBT MyBest Score 80 achieved)" data-zh="英语能力提升（TOEFL iBT MyBest分数达到80分）">英語力向上（TOEFL iBT MyBest Score 80点達成）</li>
+                                        <li data-ja="中国語学習を継続中" data-en="Continuing Chinese language studies" data-zh="持续学习中文">中国語学習を継続中</li>
+                                        <li data-ja="ビジネス実務法務検定の勉強中" data-en="Studying for Business Legal Affairs Certification" data-zh="正在学习商务实务法务认证">ビジネス実務法務検定の勉強中</li>
+                                        <li data-ja="AI ツールの日常的な活用と研究" data-en="Daily utilization and research of AI tools" data-zh="AI工具的日常使用和研究">AI ツールの日常的な活用と研究</li>
+                                        <li data-ja="様々な分野の知識とスキルの統合" data-en="Integration of knowledge and skills across various fields" data-zh="整合各个领域的知识和技能">様々な分野の知識とスキルの統合</li>
                                     </ul>
                                 </div>
                             </div>
@@ -260,48 +308,57 @@
                         <div class="experience-item animate-on-scroll" data-animation="slide-in-left" data-delay="0.1">
                             <div class="experience-marker"></div>
                             <div class="experience-card highlight card-3d-enhanced">
-                                <div class="experience-date">高校3年生</div>
-                                <h3>生徒会長として校則改定を実現</h3>
-                                <p class="experience-role">生徒会長 | リーダーシップ・交渉・組織運営</p>
-                                
-                                <div class="challenge-section">
-                                    <h4><i class="fas fa-exclamation-triangle"></i> 課題・背景</h4>
-                                    <p>
-                                        冬場の厳しい寒さにもかかわらず、高価で重たい指定のコートしか防寒具として
-                                        認められていない校則により、生徒が健康面・経済面で負担を感じていました。
-                                        自身も2年間この問題を認識し、多くの生徒からも同様の意見を収集していました。
-                                    </p>
-                                </div>
-
-                                <div class="action-section">
-                                    <h4><i class="fas fa-cogs"></i> 取り組み内容</h4>
-                                    <ul class="action-list">
-                                        <li>全校生徒へのアンケート調査と意見集約、改定のポイントやメリット・デメリットの体系化</li>
-                                        <li>校則改定の効果的な進め方や教師とのコミュニケーション手法に関するリサーチ</li>
-                                        <li>正式な提案資料の作成、生徒代表との協議、反対意見を含む多角的な意見交換</li>
-                                    </ul>
-                                </div>
-
-                                <div class="result-section">
-                                    <h4><i class="fas fa-trophy"></i> 成果・影響</h4>
-                                    <div class="result-highlight">
-                                        <span class="big-number">90%+</span>
-                                        <span class="result-text">全校生徒の賛成を獲得</span>
+                                <div class="experience-header">
+                                    <div class="experience-basic-info">
+                                        <div class="experience-date" data-ja="高校3年生" data-en="Senior Year High School" data-zh="高三学生">高校3年生</div>
+                                        <h3 data-ja="生徒会長として校則改定を実現" data-en="Achieving School Rule Reform as Student Council President" data-zh="作为学生会主席实现校规改革">生徒会長として校則改定を実現</h3>
+                                        <p class="experience-role" data-ja="生徒会長 | リーダーシップ・交渉・組織運営" data-en="Student Council President | Leadership, Negotiation, Organizational Management" data-zh="学生会主席 | 领导力、谈判、组织管理">生徒会長 | リーダーシップ・交渉・組織運営</p>
                                     </div>
-                                    <p>3年以上改定されていなかった校則の改定に成功。生徒の健康面・経済面の負担軽減を実現しました。</p>
+                                    <button class="experience-toggle-btn" aria-label="詳細を表示">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
                                 </div>
+                                
+                                <div class="experience-details collapsed">
+                                    <div class="challenge-section">
+                                        <h4 data-ja="課題・背景" data-en="Challenge & Background"><i class="fas fa-exclamation-triangle"></i> <span data-ja="課題・背景" data-en="Challenge & Background">課題・背景</span></h4>
+                                        <p data-ja="冬場の厳しい寒さにもかかわらず、高価で重たい指定のコートしか防寒具として認められていない校則により、生徒が健康面・経済面で負担を感じていました。自身も2年間この問題を認識し、多くの生徒からも同様の意見を収集していました。" data-en="Despite harsh winter conditions, school rules only permitted expensive and heavy designated coats as winter wear, causing health and financial burdens for students. Having recognized this problem for two years, I collected similar feedback from many students.">
+                                            冬場の厳しい寒さにもかかわらず、高価で重たい指定のコートしか防寒具として
+                                            認められていない校則により、生徒が健康面・経済面で負担を感じていました。
+                                            自身も2年間この問題を認識し、多くの生徒からも同様の意見を収集していました。
+                                        </p>
+                                    </div>
 
-                                <div class="skills-gained">
-                                    <h4><i class="fas fa-medal"></i> 得られたスキル</h4>
-                                    <div class="skills-tags">
-                                        <span class="skill-tag">リーダーシップ</span>
-                                        <span class="skill-tag">傾聴力・共感力</span>
-                                        <span class="skill-tag">交渉力</span>
-                                        <span class="skill-tag">資料作成能力</span>
-                                        <span class="skill-tag">リサーチ能力</span>
-                                        <span class="skill-tag">チームマネジメント</span>
-                                        <span class="skill-tag">プレゼンテーション</span>
-                                        <span class="skill-tag">論理的思考力</span>
+                                    <div class="action-section">
+                                        <h4 data-ja="取り組み内容" data-en="Action Taken"><i class="fas fa-cogs"></i> <span data-ja="取り組み内容" data-en="Action Taken">取り組み内容</span></h4>
+                                        <ul class="action-list">
+                                            <li data-ja="全校生徒へのアンケート調査と意見集約、改定のポイントやメリット・デメリットの体系化" data-en="School-wide survey and opinion aggregation, systematizing revision points and pros/cons">全校生徒へのアンケート調査と意見集約、改定のポイントやメリット・デメリットの体系化</li>
+                                            <li data-ja="校則改定の効果的な進め方や教師とのコミュニケーション手法に関するリサーチ" data-en="Research on effective approaches to rule reform and communication methods with teachers">校則改定の効果的な進め方や教師とのコミュニケーション手法に関するリサーチ</li>
+                                            <li data-ja="正式な提案資料の作成、生徒代表との協議、反対意見を含む多角的な意見交換" data-en="Formal proposal creation, negotiations with student representatives, multi-perspective discussions including opposition">正式な提案資料の作成、生徒代表との協議、反対意見を含む多角的な意見交換</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="result-section">
+                                        <h4 data-ja="成果・影響" data-en="Results & Impact"><i class="fas fa-trophy"></i> <span data-ja="成果・影響" data-en="Results & Impact">成果・影響</span></h4>
+                                        <div class="result-highlight">
+                                            <span class="big-number" data-ja="90%+" data-en="90%+">90%+</span>
+                                            <span class="result-text" data-ja="全校生徒の賛成を獲得" data-en="Student support achieved">全校生徒の賛成を獲得</span>
+                                        </div>
+                                        <p data-ja="3年以上改定されていなかった校則の改定に成功。生徒の健康面・経済面の負担軽減を実現しました。" data-en="Successfully revised school rules that hadn't been updated for over 3 years. Achieved reduction in health and financial burdens for students.">3年以上改定されていなかった校則の改定に成功。生徒の健康面・経済面の負担軽減を実現しました。</p>
+                                    </div>
+
+                                    <div class="skills-gained">
+                                        <h4 data-ja="得られたスキル" data-en="Skills Gained"><i class="fas fa-medal"></i> <span data-ja="得られたスキル" data-en="Skills Gained">得られたスキル</span></h4>
+                                        <div class="skills-tags">
+                                            <span class="skill-tag" data-ja="リーダーシップ" data-en="Leadership">リーダーシップ</span>
+                                            <span class="skill-tag" data-ja="傾聴力・共感力" data-en="Listening & Empathy">傾聴力・共感力</span>
+                                            <span class="skill-tag" data-ja="交渉力" data-en="Negotiation">交渉力</span>
+                                            <span class="skill-tag" data-ja="資料作成能力" data-en="Document Creation">資料作成能力</span>
+                                            <span class="skill-tag" data-ja="リサーチ能力" data-en="Research Skills">リサーチ能力</span>
+                                            <span class="skill-tag" data-ja="チームマネジメント" data-en="Team Management">チームマネジメント</span>
+                                            <span class="skill-tag" data-ja="プレゼンテーション" data-en="Presentation">プレゼンテーション</span>
+                                            <span class="skill-tag" data-ja="論理的思考力" data-en="Logical Thinking">論理的思考力</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -310,46 +367,55 @@
                         <div class="experience-item animate-on-scroll" data-animation="slide-in-right" data-delay="0.2">
                             <div class="experience-marker"></div>
                             <div class="experience-card highlight card-3d-enhanced">
-                                <div class="experience-date">17歳</div>
-                                <h3>インターアクトクラブ部長「服の力プロジェクト」</h3>
-                                <p class="experience-role">インターアクトクラブ部長 | 社会貢献・地域連携活動</p>
-                                
-                                <div class="challenge-section">
-                                    <h4><i class="fas fa-exclamation-triangle"></i> 課題認識</h4>
-                                    <p>
-                                        家庭で不要になった古着が廃棄されたり安価で取引されたりする一方で、
-                                        世界には服を必要としている人々が多数存在するという社会問題を認識し、
-                                        このギャップを解決するためのプロジェクトを企画しました。
-                                    </p>
-                                </div>
-
-                                <div class="action-section">
-                                    <h4><i class="fas fa-cogs"></i> 実行方法</h4>
-                                    <ul class="action-list">
-                                        <li>地域の図書館、教育機関への回収ボックス設置交渉と許可取得</li>
-                                        <li>広報用ポスター・チラシの企画・デザイン・制作、地域住民への寄付促進活動</li>
-                                        <li>現地での直接的な寄付呼びかけ活動、地域住民とのコミュニケーション実施</li>
-                                    </ul>
-                                </div>
-
-                                <div class="result-section">
-                                    <h4><i class="fas fa-trophy"></i> 成果・影響</h4>
-                                    <div class="result-highlight">
-                                        <span class="big-number">10箱分</span>
-                                        <span class="result-text">1ヶ月で古着を回収</span>
+                                <div class="experience-header">
+                                    <div class="experience-basic-info">
+                                        <div class="experience-date" data-ja="17歳" data-en="Age 17">17歳</div>
+                                        <h3 data-ja="インターアクトクラブ部長<br>「服の力プロジェクト」" data-en="Interact Club President<br>- 'Power of Clothing Project'">インターアクトクラブ部長<br>「服の力プロジェクト」</h3>
+                                        <p class="experience-role" data-ja="インターアクトクラブ部長 | 社会貢献・地域連携活動" data-en="Interact Club President | Social Contribution & Community Outreach">インターアクトクラブ部長 | 社会貢献・地域連携活動</p>
                                     </div>
-                                    <p>地域住民との信頼関係を構築し、継続的な協力体制を確立。社会貢献活動への理解と支援を獲得しました。</p>
+                                    <button class="experience-toggle-btn" aria-label="詳細を表示">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
                                 </div>
+                                
+                                <div class="experience-details collapsed">
+                                    <div class="challenge-section">
+                                        <h4 data-ja="課題認識" data-en="Challenge Recognition"><i class="fas fa-exclamation-triangle"></i> <span data-ja="課題認識" data-en="Challenge Recognition">課題認識</span></h4>
+                                        <p data-ja="家庭で不要になった古着が廃棄されたり安価で取引されたりする一方で、世界には服を必要としている人々が多数存在するという社会問題を認識し、このギャップを解決するためのプロジェクトを企画しました。" data-en="Recognizing the social issue where unwanted clothes from households are discarded or sold cheaply while many people worldwide need clothing, I planned a project to bridge this gap.">
+                                            家庭で不要になった古着が廃棄されたり安価で取引されたりする一方で、
+                                            世界には服を必要としている人々が多数存在するという社会問題を認識し、
+                                            このギャップを解決するためのプロジェクトを企画しました。
+                                        </p>
+                                    </div>
 
-                                <div class="skills-gained">
-                                    <h4><i class="fas fa-medal"></i> 得られたスキル</h4>
-                                    <div class="skills-tags">
-                                        <span class="skill-tag">地域関係構築</span>
-                                        <span class="skill-tag">多世代コミュニケーション</span>
-                                        <span class="skill-tag">プロジェクト企画</span>
-                                        <span class="skill-tag">広告・ポスター作成</span>
-                                        <span class="skill-tag">直接営業</span>
-                                        <span class="skill-tag">社会課題解決</span>
+                                    <div class="action-section">
+                                        <h4 data-ja="実行方法" data-en="Implementation Method"><i class="fas fa-cogs"></i> <span data-ja="実行方法" data-en="Implementation Method">実行方法</span></h4>
+                                        <ul class="action-list">
+                                            <li data-ja="地域の図書館、教育機関への回収ボックス設置交渉と許可取得" data-en="Negotiated with local libraries and educational institutions for collection box placement and obtained permissions">地域の図書館、教育機関への回収ボックス設置交渉と許可取得</li>
+                                            <li data-ja="広報用ポスター・チラシの企画・デザイン・制作、地域住民への寄付促進活動" data-en="Planned, designed, and produced promotional posters and flyers, conducted donation promotion activities for local residents">広報用ポスター・チラシの企画・デザイン・制作、地域住民への寄付促進活動</li>
+                                            <li data-ja="現地での直接的な寄付呼びかけ活動、地域住民とのコミュニケーション実施" data-en="Conducted direct donation appeals on-site and implemented communication with local residents">現地での直接的な寄付呼びかけ活動、地域住民とのコミュニケーション実施</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="result-section">
+                                        <h4 data-ja="成果・影響" data-en="Results & Impact"><i class="fas fa-trophy"></i> <span data-ja="成果・影響" data-en="Results & Impact">成果・影響</span></h4>
+                                        <div class="result-highlight">
+                                            <span class="big-number" data-ja="10箱分" data-en="10 Boxes">10箱分</span>
+                                            <span class="result-text" data-ja="1ヶ月で古着を回収" data-en="Used clothes collected in 1 month">1ヶ月で古着を回収</span>
+                                        </div>
+                                        <p data-ja="地域住民との信頼関係を構築し、継続的な協力体制を確立。社会貢献活動への理解と支援を獲得しました。" data-en="Built trust relationships with local residents and established ongoing cooperation. Gained understanding and support for social contribution activities.">地域住民との信頼関係を構築し、継続的な協力体制を確立。社会貢献活動への理解と支援を獲得しました。</p>
+                                    </div>
+
+                                    <div class="skills-gained">
+                                        <h4 data-ja="得られたスキル" data-en="Skills Gained"><i class="fas fa-medal"></i> <span data-ja="得られたスキル" data-en="Skills Gained">得られたスキル</span></h4>
+                                        <div class="skills-tags">
+                                            <span class="skill-tag" data-ja="地域関係構築" data-en="Community Relationship Building">地域関係構築</span>
+                                            <span class="skill-tag" data-ja="多世代コミュニケーション" data-en="Multi-generational Communication">多世代コミュニケーション</span>
+                                            <span class="skill-tag" data-ja="プロジェクト企画" data-en="Project Planning">プロジェクト企画</span>
+                                            <span class="skill-tag" data-ja="広告・ポスター作成" data-en="Advertising & Poster Creation">広告・ポスター作成</span>
+                                            <span class="skill-tag" data-ja="直接営業" data-en="Direct Sales">直接営業</span>
+                                            <span class="skill-tag" data-ja="社会課題解決" data-en="Social Problem Solving">社会課題解決</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -363,7 +429,7 @@
             <div class="parallax-bg"></div>
             <div class="container">
                 <div class="section-header animate-on-scroll" data-animation="fade-in-up">
-                    <h2 class="section-title">今、勉強していること</h2>
+                    <h2 class="section-title" data-ja="今、勉強していること" data-en="What I'm Currently Learning" data-zh="我现在在学习的东西">今、勉強していること</h2>
                     <div class="section-divider"></div>
                 </div>
                 <div class="skills-content">
@@ -371,18 +437,18 @@
                                             <div class="skill-category animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.1">
                             <div class="category-header">
                                 <i class="fas fa-globe"></i>
-                                <h3>Language Skills</h3>
+                                <h3 data-ja="Language Skills" data-en="Language Skills" data-zh="语言技能">Language Skills</h3>
                             </div>
                             <div class="skills-list">
-                                <span class="skill-tag">英語（TOEFL iBT 80点）</span>
-                                <span class="skill-tag">中国語（学習中）</span>
-                                <span class="skill-tag">日本語（ネイティブ）</span>
+                                <span class="skill-tag" data-ja="英語（TOEFL iBT 80点）" data-en="English (TOEFL iBT 80)" data-zh="英语（TOEFL iBT 80分）">英語（TOEFL iBT 80点）</span>
+                                <span class="skill-tag" data-ja="中国語（学習中）" data-en="Chinese (Learning)" data-zh="中文（学习中）">中国語（学習中）</span>
+                                <span class="skill-tag" data-ja="日本語（ネイティブ）" data-en="Japanese (Native)" data-zh="日语（母语）">日本語（ネイティブ）</span>
                             </div>
                             <div class="skill-progress">
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">英語</span>
-                                        <span class="skill-level">上級</span>
+                                        <span class="skill-name" data-ja="英語" data-en="English" data-zh="英语">英語</span>
+                                        <span class="skill-level" data-ja="上級" data-en="Advanced" data-zh="高级">上級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="80"></div>
@@ -391,8 +457,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">中国語</span>
-                                        <span class="skill-level">初級</span>
+                                        <span class="skill-name" data-ja="中国語" data-en="Chinese" data-zh="中文">中国語</span>
+                                        <span class="skill-level" data-ja="初級" data-en="Beginner" data-zh="初级">初級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="15"></div>
@@ -401,8 +467,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">日本語</span>
-                                        <span class="skill-level">ネイティブ</span>
+                                        <span class="skill-name" data-ja="日本語" data-en="Japanese" data-zh="日语">日本語</span>
+                                        <span class="skill-level" data-ja="ネイティブ" data-en="Native" data-zh="母语">ネイティブ</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="100"></div>
@@ -415,21 +481,21 @@
                     <div class="skill-category animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.2">
                         <div class="category-header">
                                 <i class="fas fa-briefcase"></i>
-                                <h3>Business Skills</h3>
+                                <h3 data-ja="Business Skills" data-en="Business Skills" data-zh="商务技能">Business Skills</h3>
                         </div>
                         <div class="skills-list">
-                                <span class="skill-tag">ビジネス実務法務検定（勉強中）</span>
-                                <span class="skill-tag">資料作成</span>
-                                <span class="skill-tag">プロジェクト管理</span>
-                                <span class="skill-tag">交渉・調整</span>
-                                <span class="skill-tag">プレゼンテーション</span>
-                                <span class="skill-tag">リサーチ・分析</span>
+                                <span class="skill-tag" data-ja="ビジネス実務法務検定（勉強中）" data-en="Business Legal Affairs Certification (Studying)" data-zh="商务实务法务认证（学习中）">ビジネス実務法務検定（勉強中）</span>
+                                <span class="skill-tag" data-ja="資料作成" data-en="Document Creation" data-zh="文档制作">資料作成</span>
+                                <span class="skill-tag" data-ja="プロジェクト管理" data-en="Project Management" data-zh="项目管理">プロジェクト管理</span>
+                                <span class="skill-tag" data-ja="交渉・調整" data-en="Negotiation & Coordination" data-zh="谈判与协调">交渉・調整</span>
+                                <span class="skill-tag" data-ja="プレゼンテーション" data-en="Presentation">プレゼンテーション</span>
+                                <span class="skill-tag" data-ja="リサーチ・分析" data-en="Research & Analysis" data-zh="研究与分析">リサーチ・分析</span>
                             </div>
                             <div class="skill-progress">
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">資料作成</span>
-                                        <span class="skill-level">上級</span>
+                                        <span class="skill-name" data-ja="資料作成" data-en="Document Creation">資料作成</span>
+                                        <span class="skill-level" data-ja="上級" data-en="Advanced">上級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="90"></div>
@@ -438,8 +504,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">プロジェクト管理</span>
-                                        <span class="skill-level">中級</span>
+                                        <span class="skill-name" data-ja="プロジェクト管理" data-en="Project Management">プロジェクト管理</span>
+                                        <span class="skill-level" data-ja="中級" data-en="Intermediate">中級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="75"></div>
@@ -448,8 +514,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">交渉・調整</span>
-                                        <span class="skill-level">上級</span>
+                                        <span class="skill-name" data-ja="交渉・調整" data-en="Negotiation & Coordination">交渉・調整</span>
+                                        <span class="skill-level" data-ja="上級" data-en="Advanced">上級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="85"></div>
@@ -458,8 +524,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">プレゼンテーション</span>
-                                        <span class="skill-level">中級</span>
+                                        <span class="skill-name" data-ja="プレゼンテーション" data-en="Presentation">プレゼンテーション</span>
+                                        <span class="skill-level" data-ja="中級" data-en="Intermediate">中級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="70"></div>
@@ -472,20 +538,20 @@
                     <div class="skill-category animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.3">
                         <div class="category-header">
                                 <i class="fas fa-robot"></i>
-                                <h3>Technology & AI</h3>
+                                <h3 data-ja="Technology & AI" data-en="Technology & AI">Technology & AI</h3>
                             </div>
                             <div class="skills-list">
-                                <span class="skill-tag">AI ツール活用</span>
-                                <span class="skill-tag">ChatGPT</span>
-                                <span class="skill-tag">画像生成AI</span>
-                                <span class="skill-tag">自動化ツール</span>
-                                <span class="skill-tag">デジタルマーケティング</span>
+                                <span class="skill-tag" data-ja="AI ツール活用" data-en="AI Tool Utilization">AI ツール活用</span>
+                                <span class="skill-tag" data-ja="ChatGPT" data-en="ChatGPT">ChatGPT</span>
+                                <span class="skill-tag" data-ja="画像生成AI" data-en="Image Generation AI">画像生成AI</span>
+                                <span class="skill-tag" data-ja="自動化ツール" data-en="Automation Tools">自動化ツール</span>
+                                <span class="skill-tag" data-ja="デジタルマーケティング" data-en="Digital Marketing">デジタルマーケティング</span>
                             </div>
                             <div class="skill-progress">
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">AI ツール活用</span>
-                                        <span class="skill-level">上級</span>
+                                        <span class="skill-name" data-ja="AI ツール活用" data-en="AI Tool Utilization">AI ツール活用</span>
+                                        <span class="skill-level" data-ja="上級" data-en="Advanced">上級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="95"></div>
@@ -494,8 +560,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">ChatGPT</span>
-                                        <span class="skill-level">上級</span>
+                                        <span class="skill-name" data-ja="ChatGPT" data-en="ChatGPT">ChatGPT</span>
+                                        <span class="skill-level" data-ja="上級" data-en="Advanced">上級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="90"></div>
@@ -504,8 +570,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">画像生成AI</span>
-                                        <span class="skill-level">中級</span>
+                                        <span class="skill-name" data-ja="画像生成AI" data-en="Image Generation AI">画像生成AI</span>
+                                        <span class="skill-level" data-ja="中級" data-en="Intermediate">中級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="65"></div>
@@ -514,8 +580,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">自動化ツール</span>
-                                        <span class="skill-level">中級</span>
+                                        <span class="skill-name" data-ja="自動化ツール" data-en="Automation Tools">自動化ツール</span>
+                                        <span class="skill-level" data-ja="中級" data-en="Intermediate">中級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="70"></div>
@@ -528,21 +594,21 @@
                         <div class="skill-category animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.4">
                             <div class="category-header">
                                 <i class="fas fa-users"></i>
-                                <h3>Leadership & Communication</h3>
+                                <h3 data-ja="Leadership & Communication" data-en="Leadership & Communication">Leadership & Communication</h3>
                         </div>
                         <div class="skills-list">
-                            <span class="skill-tag">リーダーシップ</span>
-                                <span class="skill-tag">チームビルディング</span>
-                            <span class="skill-tag">傾聴力・共感力</span>
-                                <span class="skill-tag">多世代コミュニケーション</span>
-                            <span class="skill-tag">論理的思考力</span>
-                                <span class="skill-tag">問題解決能力</span>
+                            <span class="skill-tag" data-ja="リーダーシップ" data-en="Leadership">リーダーシップ</span>
+                                <span class="skill-tag" data-ja="チームビルディング" data-en="Team Building">チームビルディング</span>
+                            <span class="skill-tag" data-ja="傾聴力・共感力" data-en="Listening & Empathy">傾聴力・共感力</span>
+                                <span class="skill-tag" data-ja="多世代コミュニケーション" data-en="Multi-generational Communication">多世代コミュニケーション</span>
+                            <span class="skill-tag" data-ja="論理的思考力" data-en="Logical Thinking">論理的思考力</span>
+                                <span class="skill-tag" data-ja="問題解決能力" data-en="Problem Solving">問題解決能力</span>
                             </div>
                             <div class="skill-progress">
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">リーダーシップ</span>
-                                        <span class="skill-level">上級</span>
+                                        <span class="skill-name" data-ja="リーダーシップ" data-en="Leadership">リーダーシップ</span>
+                                        <span class="skill-level" data-ja="上級" data-en="Advanced">上級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="90"></div>
@@ -551,8 +617,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">チームビルディング</span>
-                                        <span class="skill-level">上級</span>
+                                        <span class="skill-name" data-ja="チームビルディング" data-en="Team Building">チームビルディング</span>
+                                        <span class="skill-level" data-ja="上級" data-en="Advanced">上級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="85"></div>
@@ -561,8 +627,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">傾聴力・共感力</span>
-                                        <span class="skill-level">上級</span>
+                                        <span class="skill-name" data-ja="傾聴力・共感力" data-en="Listening & Empathy">傾聴力・共感力</span>
+                                        <span class="skill-level" data-ja="上級" data-en="Advanced">上級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="95"></div>
@@ -571,8 +637,8 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="skill-info">
-                                        <span class="skill-name">論理的思考力</span>
-                                        <span class="skill-level">中級</span>
+                                        <span class="skill-name" data-ja="論理的思考力" data-en="Logical Thinking">論理的思考力</span>
+                                        <span class="skill-level" data-ja="中級" data-en="Intermediate">中級</span>
                                     </div>
                                     <div class="progress-container">
                                         <div class="progress-bar" data-percentage="80"></div>
@@ -584,28 +650,28 @@
                     </div>
 
                     <div class="learning-journey animate-on-scroll" data-animation="fade-in-up">
-                        <h3><i class="fas fa-road"></i> 日々の成長への取り組み</h3>
+                        <h3 data-ja="日々の成長への取り組み" data-en="Daily Growth Efforts"><i class="fas fa-road"></i> <span data-ja="日々の成長への取り組み" data-en="Daily Growth Efforts">日々の成長への取り組み</span></h3>
                         <div class="learning-cards animate-on-scroll" data-animation="fade-in-up">
                             <div class="learning-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.1">
                                 <div class="learning-icon">
                                     <i class="fas fa-book-open"></i>
                                 </div>
-                                <h4>日々の学習</h4>
-                                <p>AIツールを毎日いじってみたり、新しい技術の情報をキャッチアップしたり。好奇心旺盛です！</p>
+                                <h4 data-ja="日々の学習" data-en="Daily Learning">日々の学習</h4>
+                                <p data-ja="AIツールを毎日いじってみたり、新しい技術の情報をキャッチアップしたり。好奇心旺盛です！" data-en="I experiment with AI tools daily and keep up with new technology information. I'm super curious!">AIツールを毎日いじってみたり、新しい技術の情報をキャッチアップしたり。好奇心旺盛です！</p>
                             </div>
                             <div class="learning-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.2">
                                 <div class="learning-icon">
                                     <i class="fas fa-certificate"></i>
                                 </div>
-                                <h4>資格勉強</h4>
-                                <p>ビジネス実務法務検定に挑戦中！法律の知識って大事だなって思って、コツコツ勉強しています。</p>
+                                <h4 data-ja="資格勉強" data-en="Certification Studies">資格勉強</h4>
+                                <p data-ja="ビジネス実務法務検定に挑戦中！法律の知識って大事だなって思って、コツコツ勉強しています。" data-en="Currently challenging myself with the Business Legal Affairs Certification! I think legal knowledge is important, so I'm studying steadily.">  ビジネス実務法務検定に挑戦中！法律の知識って大事だなって思って、コツコツ勉強しています。</p>
                             </div>
                             <div class="learning-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.3">
                                 <div class="learning-icon">
                                     <i class="fas fa-language"></i>
                                 </div>
-                                <h4>言語学習</h4>
-                                <p>英語と中国語を勉強中です。色んな国の人と話せるようになったら、もっと面白いことができそうでワクワクしています。</p>
+                                <h4 data-ja="言語学習" data-en="Language Learning">言語学習</h4>
+                                <p data-ja="英語と中国語を勉強中です。色んな国の人と話せるようになったら、もっと面白いことができそうでワクワクしています。" data-en="I'm studying English and Chinese. I'm excited thinking about all the interesting things I could do if I could talk with people from different countries.">英語と中国語を勉強中です。色んな国の人と話せるようになったら、もっと面白いことができそうでワクワクしています。</p>
                             </div>
                         </div>
                     </div>
@@ -617,50 +683,50 @@
             <div class="parallax-bg"></div>
             <div class="container">
                 <div class="section-header animate-on-scroll" data-animation="fade-in-up">
-                    <h2 class="section-title">Hobbies & Interests</h2>
+                    <h2 class="section-title" data-ja="Hobbies & Interests" data-en="Hobbies & Interests" data-zh="爱好与兴趣">Hobbies & Interests</h2>
                     <div class="section-divider"></div>
                 </div>
                 <div class="interests-content">
                     <div class="sports-section">
-                        <h3><i class="fas fa-running"></i> スポーツ大好き人間です</h3>
-                        <p class="sports-intro">体を動かすのが本当に好きで、とりあえず色々やってみるタイプです！観るのもやるのも楽しくて、スポーツを通じて友達ができたり、家族と一緒に楽しい時間を過ごせるのが最高です。</p>
+                        <h3 data-ja="スポーツ大好き人間です" data-en="I'm a Huge Sports Enthusiast" data-zh="我是个超级体育爱好者"><i class="fas fa-running"></i> <span data-ja="スポーツ大好き人間です" data-en="I'm a Huge Sports Enthusiast" data-zh="我是个超级体育爱好者">スポーツ大好き人間です</span></h3>
+                        <p class="sports-intro" data-ja="体を動かすのが本当に好きで、とりあえず色々やってみるタイプです！観るのもやるのも楽しくて、スポーツを通じて友達ができたり、家族と一緒に楽しい時間を過ごせるのが最高です。" data-en="I truly love moving my body and I'm the type who tries all sorts of things! I enjoy both watching and playing, and the best part is making friends through sports and spending fun time with family." data-zh="我真的很喜欢运动，是那种什么都想试试的类型！无论是观看还是参与都很有趣，最棒的是通过体育交朋友，和家人一起度过愉快的时光。">体を動かすのが本当に好きで、とりあえず色々やってみるタイプです！観るのもやるのも楽しくて、スポーツを通じて友達ができたり、家族と一緒に楽しい時間を過ごせるのが最高です。</p>
                         
                         <div class="sports-grid animate-on-scroll" data-animation="fade-in-up">
                             <div class="sport-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.1">
                                 <div class="sport-icon"><i class="fas fa-baseball-ball"></i></div>
-                                <h4>野球</h4>
+                                <h4 data-ja="野球" data-en="Baseball" data-zh="棒球">野球</h4>
                             </div>
                             <div class="sport-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.2">
                                 <div class="sport-icon"><i class="fas fa-fist-raised"></i></div>
-                                <h4>柔道</h4>
+                                <h4 data-ja="柔道" data-en="Judo" data-zh="柔道">柔道</h4>
                             </div>
                             <div class="sport-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.3">
                                 <div class="sport-icon"><i class="fas fa-table-tennis"></i></div>
-                                <h4>テニス</h4>
+                                <h4 data-ja="テニス" data-en="Tennis" data-zh="网球">テニス</h4>
                             </div>
                             <div class="sport-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.4">
                                 <div class="sport-icon"><i class="fas fa-volleyball-ball"></i></div>
-                                <h4>バレーボール</h4>
+                                <h4 data-ja="バレーボール" data-en="Volleyball" data-zh="排球">バレーボール</h4>
                             </div>
                             <div class="sport-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.5">
                                 <div class="sport-icon"><i class="fas fa-futbol"></i></div>
-                                <h4>サッカー</h4>
+                                <h4 data-ja="サッカー" data-en="Soccer" data-zh="足球">サッカー</h4>
                             </div>
                             <div class="sport-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.6">
                                 <div class="sport-icon"><i class="fas fa-basketball-ball"></i></div>
-                                <h4>バスケットボール</h4>
+                                <h4 data-ja="バスケットボール" data-en="Basketball" data-zh="篮球">バスケットボール</h4>
                             </div>
                             <div class="sport-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.7">
                                 <div class="sport-icon"><i class="fas fa-circle"></i></div>
-                                <h4>ビリヤード</h4>
+                                <h4 data-ja="ビリヤード" data-en="Billiards" data-zh="台球">ビリヤード</h4>
                             </div>
                             <div class="sport-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.8">
                                 <div class="sport-icon"><i class="fas fa-table-tennis"></i></div>
-                                <h4>卓球</h4>
+                                <h4 data-ja="卓球" data-en="Table Tennis" data-zh="乒乓球">卓球</h4>
                             </div>
                             <div class="sport-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.9">
                                 <div class="sport-icon"><i class="fas fa-shuttlecock"></i></div>
-                                <h4>バドミントン</h4>
+                                <h4 data-ja="バドミントン" data-en="Badminton" data-zh="羽毛球">バドミントン</h4>
                             </div>
                         </div>
                     </div>
@@ -671,8 +737,8 @@
                                 <i class="fas fa-hot-tub"></i>
                             </div>
                             <div class="interest-content">
-                                <h4>温泉巡り</h4>
-                                <p>温泉に入ってる時の「はぁ〜」って瞬間が大好き。日本各地の温泉を巡って、地元の人との交流も楽しんでます。</p>
+                                <h4 data-ja="温泉巡り" data-en="Hot Spring Tours" data-zh="温泉之旅">温泉巡り</h4>
+                                <p data-ja="温泉に入ってる時の「はぁ〜」って瞬間が大好き。日本各地の温泉を巡って、地元の人との交流も楽しんでます。" data-en="I love that 'ahhh' moment when soaking in hot springs. I tour hot springs all over Japan and enjoy interacting with local people." data-zh="我特别喜欢泡温泉时那个'哈啊〜'的瞬间。我会在日本各地游览温泉，也很享受与当地人的交流。">温泉に入ってる時の「はぁ〜」って瞬間が大好き。日本各地の温泉を巡って、地元の人との交流も楽しんでます。</p>
                             </div>
                         </div>
                         
@@ -681,8 +747,8 @@
                                 <i class="fas fa-comments"></i>
                             </div>
                             <div class="interest-content">
-                                <h4>人との出会い</h4>
-                                <p>初対面の人でも「どんな人だろう？」ってワクワクしちゃいます。みんな違う経験をしてきてるから、話を聞くのが本当に面白い。</p>
+                                <h4 data-ja="人との出会い" data-en="Meeting People" data-zh="与人相遇">人との出会い</h4>
+                                <p data-ja="初対面の人でも「どんな人だろう？」ってワクワクしちゃいます。みんな違う経験をしてきてるから、話を聞くのが本当に面白い。" data-en="Even with people I meet for the first time, I get excited thinking 'What kind of person are they?' Everyone has had different experiences, so listening to their stories is really fascinating." data-zh="即使是初次见面的人，我也会兴奋地想'这是个什么样的人呢？'。每个人都有着不同的经历，所以听他们的故事真的很有趣。">初対面の人でも「どんな人だろう？」ってワクワクしちゃいます。みんな違う経験をしてきてるから、話を聞くのが本当に面白い。</p>
                             </div>
                         </div>
 
@@ -691,37 +757,37 @@
                                 <i class="fas fa-utensils"></i>
                             </div>
                             <div class="interest-content">
-                                <h4>美味しいもの探し</h4>
-                                <p>寿司とラーメンは特に好き！海外料理も大好きで、基本的に嫌いな食べ物がないんです。食べることで色んな文化を知れるのも楽しいですね。</p>
+                                <h4 data-ja="美味しいもの探し" data-en="Searching for Delicious Food" data-zh="寻找美食">美味しいもの探し</h4>
+                                <p data-ja="寿司とラーメンは特に好き！海外料理も大好きで、基本的に嫌いな食べ物がないんです。食べることで色んな文化を知れるのも楽しいですね。" data-en="I especially love sushi and ramen! I also love international cuisine and basically have no foods I dislike. It's fun to learn about different cultures through food." data-zh="我特别喜欢寿司和拉面！也很爱吃国外料理，基本上没有不喜欢吃的食物。通过美食了解不同文化也很有趣呢。">寿司とラーメンは特に好き！海外料理も大好きで、基本的に嫌いな食べ物がないんです。食べることで色んな文化を知れるのも楽しいですね。</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="connection-seeking animate-on-scroll" data-animation="fade-in-up">
-                        <h3><i class="fas fa-handshake"></i> 求める交流・仲間</h3>
+                        <h3 data-ja="求める交流・仲間" data-en="Connections & Friends I Seek" data-zh="希望的交流与伙伴"><i class="fas fa-handshake"></i> <span data-ja="求める交流・仲間" data-en="Connections & Friends I Seek" data-zh="希望的交流与伙伴">求める交流・仲間</span></h3>
                         <div class="connection-cards animate-on-scroll" data-animation="fade-in-up">
                             <div class="connection-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.1">
                                 <div class="connection-icon">
                                     <i class="fas fa-running"></i>
                                 </div>
-                                <h4>スポーツ仲間</h4>
-                                <p>一緒に汗をかいて、終わったらみんなで「お疲れ様！」って言える仲間が欲しいです。上手い下手いは関係なく、みんなで楽しめるのが一番！</p>
+                                <h4 data-ja="スポーツ仲間" data-en="Sports Friends">スポーツ仲間</h4>
+                                <p data-ja="一緒に汗をかいて、終わったらみんなで「お疲れ様！」って言える仲間が欲しいです。上手い下手いは関係なく、みんなで楽しめるのが一番！" data-en="I want friends who can sweat together and say 'Good job!' to everyone when it's over. Skill level doesn't matter - having fun together is what's most important!">  一緒に汗をかいて、終わったらみんなで「お疲れ様！」って言える仲間が欲しいです。上手い下手いは関係なく、みんなで楽しめるのが一番！</p>
                             </div>
                             
                             <div class="connection-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.2">
                                 <div class="connection-icon">
                                     <i class="fas fa-rocket"></i>
                                 </div>
-                                <h4>ビジネス仲間</h4>
-                                <p>「何か面白いことやってみたい！」って情熱を持ってる人や、実際にビジネスをやってる先輩たちと繋がって、お互いに刺激し合えたいです。</p>
+                                <h4 data-ja="ビジネス仲間" data-en="Business Partners">ビジネス仲間</h4>
+                                <p data-ja="「何か面白いことやってみたい！」って情熱を持ってる人や、実際にビジネスをやってる先輩たちと繋がって、お互いに刺激し合えたいです。" data-en="I want to connect with people who have the passion of 'I want to try something interesting!' and seniors who are actually doing business, and mutually inspire each other.">「何か面白いことやってみたい！」って情熱を持ってる人や、実際にビジネスをやってる先輩たちと繋がって、お互いに刺激し合えたいです。</p>
                             </div>
                             
                             <div class="connection-card animate-on-scroll card-3d" data-animation="scale-in" data-delay="0.3">
                                 <div class="connection-icon">
                                     <i class="fas fa-laugh"></i>
                                 </div>
-                                <h4>楽しい友達</h4>
-                                <p>シンプルに、一緒にいると楽しい人たちとの時間を大切にしています。笑ったり、くだらない話をしたり、そんな時間が一番リラックスできます。</p>
+                                <h4 data-ja="楽しい友達" data-en="Fun Friends">楽しい友達</h4>
+                                <p data-ja="シンプルに、一緒にいると楽しい人たちとの時間を大切にしています。笑ったり、くだらない話をしたり、そんな時間が一番リラックスできます。" data-en="Simply put, I cherish time with people who are fun to be around. Laughing, having silly conversations - those moments are when I can relax the most.">シンプルに、一緒にいると楽しい人たちとの時間を大切にしています。笑ったり、くだらない話をしたり、そんな時間が一番リラックスできます。</p>
                             </div>
                         </div>
                     </div>
@@ -733,13 +799,13 @@
             <div class="parallax-bg"></div>
             <div class="container">
                 <div class="section-header animate-on-scroll" data-animation="fade-in-up">
-                    <h2 class="section-title">Let's Connect</h2>
+                    <h2 class="section-title" data-ja="Let's Connect" data-en="Let's Connect" data-zh="让我们联系吧">Let's Connect</h2>
                     <div class="section-divider"></div>
                 </div>
                 <div class="contact-content animate-on-scroll" data-animation="fade-in-up">
                     <div class="contact-intro animate-on-scroll" data-animation="slide-in-left">
-                        <h3>こんな人とつながりたいです</h3>
-                        <p>
+                        <h3 data-ja="こんな人とつながりたいです" data-en="The Kind of People I Want to Connect With" data-zh="我想与这样的人建立联系">こんな人とつながりたいです</h3>
+                        <p data-ja="「一緒に何か面白いことやろうよ！」って思える仲間を探しています。社会をもっと良くしたいと思ってる人、スポーツを一緒に楽しめる人、ビジネスで新しいことに挑戦したい人...どんな形でもいいので、お互いに刺激し合える関係を築いていけたら嬉しいです。気軽に声かけてくださいね！" data-en="I'm looking for friends who think 'Let's do something interesting together!' People who want to make society better, people who can enjoy sports together, people who want to challenge new things in business... In any form, I'd be happy if we could build relationships where we inspire each other. Feel free to reach out!" data-zh="我在寻找那些想着「一起做些有趣的事情吧！」的伙伴。想要让社会变得更美好的人、能一起享受运动的人、想在商务领域挑战新事物的人...无论以什么形式，如果能建立起相互激励的关系，我会很高兴。请随时联系我！">
                             「一緒に何か面白いことやろうよ！」って思える仲間を探しています。
                             社会をもっと良くしたいと思ってる人、スポーツを一緒に楽しめる人、
                             ビジネスで新しいことに挑戦したい人...どんな形でもいいので、
@@ -749,15 +815,15 @@
                     </div>
                     
                     <div class="contact-cta animate-on-scroll" data-animation="slide-in-right">
-                        <p class="contact-message">みなさんとの出会いを楽しみにしています！</p>
+                        <p class="contact-message" data-ja="みなさんとの出会いを楽しみにしています！" data-en="I'm looking forward to meeting everyone!" data-zh="我期待与大家的相遇！">みなさんとの出会いを楽しみにしています！</p>
                         <div class="contact-buttons">
                             <a href="https://instagram.com/__natsuto_" class="contact-btn instagram" target="_blank" rel="noopener">
                                 <i class="fab fa-instagram"></i>
-                                <span>Instagram でフォロー</span>
+                                <span data-ja="Instagram でフォロー" data-en="Follow on Instagram" data-zh="在Instagram上关注">Instagram でフォロー</span>
                             </a>
                             <a href="https://linkedin.com/in/山口夏翔" class="contact-btn linkedin" target="_blank" rel="noopener">
                                 <i class="fab fa-linkedin-in"></i>
-                                <span>LinkedIn で繋がる</span>
+                                <span data-ja="LinkedIn で繋がる" data-en="Connect on LinkedIn" data-zh="在LinkedIn上连接">LinkedIn で繋がる</span>
                             </a>
                         </div>
                     </div>
@@ -770,8 +836,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-text">
-                    <p>&copy; 2024 山口夏翔 (Natsuto Yamaguchi). All rights reserved.</p>
-                    <p class="footer-motto">「なりたいものになれるのはなろうとしたものだけ」</p>
+                    <p data-ja="&copy; 2024 山口夏翔 (Natsuto Yamaguchi). All rights reserved." data-en="&copy; 2024 Natsuto Yamaguchi. All rights reserved." data-zh="&copy; 2024 山口夏翔 (Natsuto Yamaguchi). 保留所有权利。">&copy; 2024 山口夏翔 (Natsuto Yamaguchi). All rights reserved.</p>
+                    <p class="footer-motto" data-ja="「なりたいものになれるのはなろうとしたものだけ」" data-en="'You can only become what you try to become'" data-zh="「只有努力成为的人才能成为想要成为的人」">「なりたいものになれるのはなろうとしたものだけ」</p>
                 </div>
                 <div class="social-links">
                     <a href="https://instagram.com/__natsuto_" class="social-link" title="Instagram" target="_blank" rel="noopener">

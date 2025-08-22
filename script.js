@@ -1,32 +1,97 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Theme Management
-    const themeToggle = document.getElementById('themeToggle');
+    // Language Management
     const htmlElement = document.documentElement;
+    const langDropdown = document.getElementById('langDropdown');
+    const langToggle = document.getElementById('langToggle');
+    const langDropdownMenu = document.getElementById('langDropdownMenu');
+    const langOptions = document.querySelectorAll('.lang-option');
     
-    // Load saved theme from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Load saved language from localStorage
+    const savedLang = localStorage.getItem('language') || 'ja';
+    htmlElement.setAttribute('data-lang', savedLang);
     
-    // Set initial theme
-    if (savedTheme) {
-        htmlElement.setAttribute('data-theme', savedTheme);
-    } else if (prefersDark) {
-        htmlElement.setAttribute('data-theme', 'dark');
+    // Language names mapping
+    const languageNames = {
+        'ja': '日本語',
+        'en': 'English',
+        'zh': '中文'
+    };
+    
+    // Update language display
+    function updateLanguageDisplay(lang) {
+        const langText = langToggle.querySelector('.lang-text');
+        langText.textContent = languageNames[lang] || '日本語';
+        
+        // Update active option
+        langOptions.forEach(option => {
+            option.classList.remove('active');
+            if (option.getAttribute('data-lang') === lang) {
+                option.classList.add('active');
+            }
+        });
     }
     
-    // Theme toggle functionality
-    themeToggle.addEventListener('click', function() {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    // Switch language content
+    function switchLanguage(lang) {
+        const elementsWithLang = document.querySelectorAll('[data-ja][data-en], [data-ja][data-en][data-zh]');
         
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+        elementsWithLang.forEach(element => {
+            const jaText = element.getAttribute('data-ja');
+            const enText = element.getAttribute('data-en');
+            const zhText = element.getAttribute('data-zh');
+            
+            if (lang === 'ja' && jaText) {
+                element.innerHTML = jaText;
+            } else if (lang === 'en' && enText) {
+                element.innerHTML = enText;
+            } else if (lang === 'zh' && zhText) {
+                element.innerHTML = zhText;
+            }
+        });
         
-        // Add transition effect
-        htmlElement.style.transition = 'all 0.3s ease';
-        setTimeout(() => {
-            htmlElement.style.transition = '';
-        }, 300);
+        // Update HTML lang attribute
+        const langCodes = {
+            'ja': 'ja',
+            'en': 'en',
+            'zh': 'zh-CN'
+        };
+        document.documentElement.setAttribute('lang', langCodes[lang] || 'ja');
+        
+        // Update language display
+        updateLanguageDisplay(lang);
+        
+        // Save to localStorage
+        localStorage.setItem('language', lang);
+    }
+    
+    // Initialize language on page load
+    switchLanguage(savedLang);
+    
+    // Dropdown toggle functionality
+    langToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        langDropdown.classList.toggle('active');
+    });
+    
+    // Language option selection
+    langOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const newLang = this.getAttribute('data-lang');
+            htmlElement.setAttribute('data-lang', newLang);
+            switchLanguage(newLang);
+            langDropdown.classList.remove('active');
+            
+            // Add transition effect
+            htmlElement.style.transition = 'all 0.3s ease';
+            setTimeout(() => {
+                htmlElement.style.transition = '';
+            }, 300);
+        });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        langDropdown.classList.remove('active');
     });
     
     // Loading Screen
@@ -586,6 +651,114 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.style.transform = 'translateY(0)';
             });
         }
+    });
+
+    // Experience Toggle Functionality
+    const experienceToggleBtns = document.querySelectorAll('.experience-toggle-btn');
+    
+    experienceToggleBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const experienceCard = this.closest('.experience-card');
+            const details = experienceCard.querySelector('.experience-details');
+            const icon = this.querySelector('i');
+            
+            // Toggle collapsed class
+            details.classList.toggle('collapsed');
+            
+            // Toggle button state
+            this.classList.toggle('expanded');
+            
+            // Update aria-label for accessibility
+            const isExpanded = details.classList.contains('collapsed') ? false : true;
+            this.setAttribute('aria-label', isExpanded ? '詳細を隠す' : '詳細を表示');
+            
+            // Add smooth animation
+            if (!details.classList.contains('collapsed')) {
+                // Expanding
+                details.style.maxHeight = details.scrollHeight + 'px';
+                setTimeout(() => {
+                    details.style.maxHeight = 'none';
+                }, 400);
+            } else {
+                // Collapsing
+                details.style.maxHeight = details.scrollHeight + 'px';
+                setTimeout(() => {
+                    details.style.maxHeight = '0';
+                }, 10);
+            }
+        });
+    });
+
+    // Enhanced Micro-interactions
+    const skillCategories = document.querySelectorAll('.skill-category');
+    const experienceCards = document.querySelectorAll('.experience-card');
+    
+    // Skill category hover effects
+    skillCategories.forEach(category => {
+        category.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-15px) scale(1.02)';
+            this.style.boxShadow = '0 25px 70px var(--shadow-heavy)';
+        });
+        
+        category.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 10px 40px var(--shadow-light)';
+        });
+    });
+    
+    // Experience card hover effects
+    experienceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 20px 60px var(--shadow-medium)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 15px 50px var(--shadow-light)';
+        });
+    });
+    
+    // Smooth scroll with easing
+    const smoothScrollTo = (target, duration = 1000) => {
+        const targetPosition = target.offsetTop - 80;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+        
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+        
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+        
+        requestAnimationFrame(animation);
+    };
+    
+    // Enhanced navigation link clicks
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                smoothScrollTo(targetSection);
+            }
+            
+            // Update active nav link with animation
+            navLinks.forEach(navLink => navLink.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
 
     console.log('🎉 Natsuto Yamaguchi Portfolio loaded successfully!');
