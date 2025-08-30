@@ -891,6 +891,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: background 0.3s ease;
     position: relative;
     overflow: hidden;
+    padding-top: 100px;
 }
 
 .hero-section::after {
@@ -2012,6 +2013,7 @@ button, a, .card, .skill-category, .highlight-item {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        padding-top: 2rem;
     }
 
     .profile-image {
