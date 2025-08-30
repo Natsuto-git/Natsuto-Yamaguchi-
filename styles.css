@@ -1023,7 +1023,7 @@ button, a, .card, .skill-category, .highlight-item {
 }
 
 .name-signature {
-    max-width: 450px;
+    max-width: 300px;
     width: 100%;
     height: auto;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -2012,7 +2012,7 @@ button, a, .card, .skill-category, .highlight-item {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
+        gap: 1rem;
         padding-top: 2rem;
     }
 
@@ -2112,7 +2112,7 @@ button, a, .card, .skill-category, .highlight-item {
     }
 
     .name-signature {
-        max-width: 320px;
+        max-width: 250px;
         width: 100%;
         height: auto;
         background: transparent;
