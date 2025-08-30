@@ -2153,6 +2153,7 @@ button, a, .card, .skill-category, .highlight-item {
         font-size: 1.1rem;
         line-height: 1.6;
         font-weight: 500;
+        white-space: pre-line;
     }
 
     /* Hero CTA buttons mobile optimization */
