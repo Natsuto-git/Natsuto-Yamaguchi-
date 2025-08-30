@@ -2172,6 +2172,19 @@ button, a, .card, .skill-category, .highlight-item {
         margin-top: 0.5rem;
     }
 
+    /* Contact links mobile optimization */
+    .contact-links {
+        gap: 0.3rem;
+        max-width: 280px;
+        flex-wrap: nowrap;
+    }
+    
+    .contact-link .contact-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
     /* Hero CTA buttons mobile optimization */
     .hero-cta {
         flex-direction: row;
