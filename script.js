@@ -301,18 +301,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Typing effect for hero subtitle
     const heroSubtitle = document.querySelector('.hero-subtitle');
     if (heroSubtitle) {
-        const originalText = heroSubtitle.textContent;
-        heroSubtitle.textContent = '';
+        const originalText = heroSubtitle.innerHTML;
+        heroSubtitle.innerHTML = '';
         
         setTimeout(() => {
-            let index = 0;
-            const typeInterval = setInterval(() => {
-                heroSubtitle.textContent += originalText[index];
-                index++;
-                if (index >= originalText.length) {
-                    clearInterval(typeInterval);
-                }
-            }, 50);
+            heroSubtitle.innerHTML = originalText;
         }, 2000);
     }
 
