@@ -396,19 +396,7 @@
 }
 
 .parallax-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120%;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(100, 116, 139, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(148, 163, 184, 0.02) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(203, 213, 225, 0.02) 0%, transparent 50%);
-    transform: translateZ(0);
-    will-change: transform;
-    pointer-events: none;
-    z-index: -1;
+    display: none;
 }
 
 .parallax-element {
@@ -477,7 +465,7 @@
 }
 
 .hero-section .parallax-bg {
-    height: 140%;
+    height: 100%;
 }
 
 .about-section {

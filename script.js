@@ -260,18 +260,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroSection = document.querySelector('.hero-section');
     const profileImage = document.querySelector('.profile-image');
     
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        
-        if (heroSection && scrolled < window.innerHeight) {
-            heroSection.style.transform = `translateY(${rate}px)`;
-        }
-        
-        if (profileImage && scrolled < window.innerHeight) {
-            profileImage.style.transform = `translateY(${scrolled * 0.3}px)`;
-        }
-    });
+    // Scroll effects disabled for smoother experience
+    // window.addEventListener('scroll', function() {
+    //     const scrolled = window.pageYOffset;
+    //     const rate = scrolled * -0.5;
+    //     
+    //     if (heroSection && scrolled < window.innerHeight) {
+    //         heroSection.style.transform = `translateY(${rate}px)`;
+    //     }
+    //     
+    //     if (profileImage && scrolled < window.innerHeight) {
+    //         profileImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+    //     }
+    // });
 
     // Skill tags interaction
     const skillTags = document.querySelectorAll('.skill-tag');
@@ -604,7 +605,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function updateParallax() {
         const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
+        const rate = scrolled * -0.1;
         
         // Update parallax backgrounds
         parallaxBgs.forEach(bg => {
@@ -628,10 +629,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Only apply parallax on desktop and if user doesn't prefer reduced motion
-    if (window.innerWidth > 768 && !prefersReducedMotion) {
-        window.addEventListener('scroll', requestTick);
-    }
+    // Parallax disabled for smoother scrolling
+    // if (window.innerWidth > 768 && !prefersReducedMotion) {
+    //     window.addEventListener('scroll', requestTick);
+    // }
     
     // Handle window resize
     window.addEventListener('resize', function() {
