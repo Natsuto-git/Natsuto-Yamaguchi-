@@ -955,11 +955,13 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
     overflow: hidden;
     position: relative;
-    background: rgba(148, 163, 184, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(148, 163, 184, 0.3);
-    padding: 6px;
-    box-shadow: 0 25px 80px var(--shadow-medium);
+    border: 8px solid #B8941F;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                linear-gradient(145deg, #D4AF37 0%, #B8941F 50%, #9A7B1A 100%);
+    padding: 0;
+    box-shadow: 0 25px 80px var(--shadow-medium),
+                inset 0 2px 8px rgba(255, 255, 255, 0.2),
+                inset 0 -2px 8px rgba(0, 0, 0, 0.1);
     animation: float 6s ease-in-out infinite;
 }
 
