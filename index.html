@@ -530,6 +530,23 @@
         </div>
     </footer>
 
-    <script type="module" src="script.js"></script>
+    <script defer src="script.js"></script>
+    <script>
+      // Inline fallback: file://環境などで外部JSが実行されない場合でも必ずローディングを消す
+      (function(){
+        var done = false;
+        function hide(){
+          if (done) return; done = true;
+          var el = document.getElementById('loadingScreen');
+          if (!el) return;
+          el.classList.add('fade-out');
+          setTimeout(function(){ el.style.display = 'none'; }, 800);
+        }
+        document.addEventListener('DOMContentLoaded', function(){
+          setTimeout(hide, 5000);
+        });
+        setTimeout(hide, 12000);
+      })();
+    </script>
 </body>
 </html>
