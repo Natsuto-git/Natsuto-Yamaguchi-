@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/Natsuto-Yamaguchi-/',
+  // Vercel配信ではルート配下で提供されるため、baseはルートに設定
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
