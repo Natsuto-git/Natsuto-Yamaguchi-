@@ -3205,6 +3205,35 @@ button, a, .card, .skill-category, .highlight-item {
     margin: 4rem 0;
 }
 
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.interest-item {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 6px 24px var(--shadow-light);
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.interest-item i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.interest-item h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
 .interest-card {
     display: flex;
     align-items: center;
