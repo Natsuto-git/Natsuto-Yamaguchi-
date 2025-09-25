@@ -97,15 +97,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Loading Screen
     const loadingScreen = document.getElementById('loadingScreen');
     
-    // Hide loading screen after page loads
-    window.addEventListener('load', function() {
+    // Hide loading screen after page loads (with fail-safes)
+    function hideLoadingScreen() {
+        if (!loadingScreen) return;
+        if (loadingScreen.classList.contains('fade-out')) return;
+        loadingScreen.classList.add('fade-out');
         setTimeout(() => {
-            loadingScreen.classList.add('fade-out');
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 800);
-        }, 1500);
+            loadingScreen.style.display = 'none';
+        }, 800);
+    }
+
+    // Primary: after window load
+    window.addEventListener('load', function() {
+        setTimeout(hideLoadingScreen, 1500);
     });
+
+    // Secondary: after DOMContentLoaded, in case window 'load' never fires
+    document.addEventListener('DOMContentLoaded', function() {
+        // Ensure it goes away within 4s after DOM is ready
+        setTimeout(hideLoadingScreen, 4000);
+    });
+
+    // Ultimate fallback: absolute timeout (10s) from script start
+    setTimeout(hideLoadingScreen, 10000);
 
     // Navbar Functionality
     const navbar = document.getElementById('navbar');
