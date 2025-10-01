@@ -1080,7 +1080,7 @@ button, a, .card, .skill-category, .highlight-item {
 }
 
 .hero-contact {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -2609,7 +2609,7 @@ button, a, .card, .skill-category, .highlight-item {
     background: rgba(19, 83, 137, 0.15);
     padding: 1.5rem;
     border-radius: 15px;
-    margin: 0.5rem auto 2rem;
+    margin: 0.5rem auto 0.8rem;
     border-left: 4px solid var(--primary-color);
     font-style: italic;
     font-size: 1rem;
