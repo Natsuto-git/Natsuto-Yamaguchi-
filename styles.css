@@ -1006,7 +1006,7 @@ button, a, .card, .skill-category, .highlight-item {
     display: block;
     text-align: center;
     width: 100%;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0rem;
 }
 
 .name-signature {
@@ -1046,6 +1046,7 @@ button, a, .card, .skill-category, .highlight-item {
     font-size: 2rem;
     color: var(--text-light);
     font-weight: 300;
+    margin-top: -0.5rem;
     margin-bottom: 1.5rem;
     font-family: 'Inter', sans-serif;
     text-align: center;
