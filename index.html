@@ -138,7 +138,6 @@
                             <span data-ja="ワクワクする道を選んで、その道を正解にしていく" data-en="Choose the path that excites you, and make it the right one" data-zh="选择让自己兴奋的道路，然后让它成为正确的选择">ワクワクする道を選んで、その道を正解にしていく</span>
                         </div>
                         <div class="hero-contact">
-                            <h3 class="contact-title" data-ja="Contact" data-en="Contact" data-zh="联系方式">Contact</h3>
                             <div class="contact-links">
                                 <a href="https://www.instagram.com/__natsuto_/" class="contact-link instagram" target="_blank" rel="noopener">
                                     <div class="contact-icon">
@@ -524,13 +523,16 @@
             <div class="footer-content">
                 <div class="footer-text">
                 </div>
+                <div class="footer-image">
+                    <img src="images/LotusCard.logo.jpg" alt="LotusCard Logo" loading="lazy">
+                </div>
             </div>
         </div>
     </footer>
 
     <script defer src="script.js"></script>
     <script>
-      // Inline fallback: file://環境などで外部JSが実行されない場合でも必ずローディングを消す
+      // 強化版フェールセーフ: 必ずローディングを消す
       (function(){
         var done = false;
         function hide(){
@@ -538,12 +540,21 @@
           var el = document.getElementById('loadingScreen');
           if (!el) return;
           el.classList.add('fade-out');
-          setTimeout(function(){ el.style.display = 'none'; }, 800);
+          el.style.opacity = '0';
+          setTimeout(function(){ 
+            el.style.display = 'none'; 
+          }, 800);
         }
-        document.addEventListener('DOMContentLoaded', function(){
-          setTimeout(hide, 5000);
-        });
-        setTimeout(hide, 12000);
+        // 即座に実行
+        setTimeout(hide, 1500);
+        // DOMContentLoaded後
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', hide);
+        } else {
+          hide();
+        }
+        // 最終フェールセーフ
+        setTimeout(hide, 3000);
       })();
     </script>
 </body>
