@@ -171,9 +171,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Enhanced Intersection Observer for scroll animations
     const observerOptions = {
-        // モバイルでも発火しやすいように緩和
-        threshold: 0.05,
-        rootMargin: '0px 0px -10% 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     // Check for reduced motion preference
@@ -262,31 +261,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Observe all elements with animation classes
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
-
-    // 初期表示でもビューポート内にある要素は直ちにanimatedを付与
-    function addAnimatedIfInView(element) {
-        const rect = element.getBoundingClientRect();
-        const inView = rect.top < (window.innerHeight * 0.95) && rect.bottom > 0;
-        if (inView) {
-            element.classList.add('animated');
-        }
-    }
-
     animatedElements.forEach(element => {
+        // Initialize elements for reduced motion
         if (prefersReducedMotion) {
             element.style.opacity = '1';
             element.style.transform = 'none';
         }
-        addAnimatedIfInView(element);
         animationObserver.observe(element);
-    });
-
-    // ロード時・リサイズ時にも再判定（特にモバイル初期表示で有効）
-    window.addEventListener('load', () => {
-        animatedElements.forEach(addAnimatedIfInView);
-    });
-    window.addEventListener('resize', () => {
-        animatedElements.forEach(addAnimatedIfInView);
     });
 
     // Parallax effect for hero section
@@ -789,4 +770,58 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     console.log('🎉 Natsuto Yamaguchi Portfolio loaded successfully!');
+
+    // Dial interactions
+    const dialWheel = document.getElementById('dialWheel');
+    if (dialWheel) {
+        let currentDeg = 0;
+        let isDragging = false;
+        let startX = 0;
+        let lastX = 0;
+        let rafId = null;
+
+        function setRotation(deg) {
+            currentDeg = deg;
+            dialWheel.style.animation = 'none';
+            dialWheel.style.transform = `rotateY(${currentDeg}deg)`;
+        }
+
+        function onPointerDown(x) {
+            isDragging = true;
+            startX = x;
+            lastX = x;
+            dialWheel.style.cursor = 'grabbing';
+        }
+
+        function onPointerMove(x) {
+            if (!isDragging) return;
+            const delta = x - lastX;
+            lastX = x;
+            // 1px ≒ 0.5deg 回転
+            setRotation(currentDeg + delta * 0.5);
+        }
+
+        function onPointerUp() {
+            isDragging = false;
+            dialWheel.style.cursor = 'grab';
+            // 慣性は付けずに静止
+        }
+
+        // Mouse
+        dialWheel.addEventListener('mousedown', (e) => onPointerDown(e.clientX));
+        window.addEventListener('mousemove', (e) => onPointerMove(e.clientX));
+        window.addEventListener('mouseup', onPointerUp);
+
+        // Touch
+        dialWheel.addEventListener('touchstart', (e) => {
+            if (e.touches[0]) onPointerDown(e.touches[0].clientX);
+        }, { passive: true });
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches[0]) onPointerMove(e.touches[0].clientX);
+        }, { passive: true });
+        window.addEventListener('touchend', onPointerUp);
+
+        // 初期カーソル
+        dialWheel.style.cursor = 'grab';
+    }
 });
