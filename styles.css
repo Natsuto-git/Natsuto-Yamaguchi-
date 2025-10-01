@@ -662,7 +662,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 55px;
 }
 
 .nav-left {
@@ -916,7 +916,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: -100px auto 0;
     padding: 0 2rem;
     position: relative;
     z-index: 3;
