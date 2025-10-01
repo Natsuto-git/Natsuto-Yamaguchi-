@@ -1086,9 +1086,11 @@ button, a, .card, .skill-category, .highlight-item {
 
 .contact-title {
     color: var(--primary-color);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.05em;
 }
 
 /* Desktop contact styles */
