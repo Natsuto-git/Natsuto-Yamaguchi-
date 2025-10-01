@@ -171,8 +171,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Enhanced Intersection Observer for scroll animations
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        // モバイルでも発火しやすいように緩和
+        threshold: 0.05,
+        rootMargin: '0px 0px -10% 0px'
     };
 
     // Check for reduced motion preference
@@ -261,13 +262,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Observe all elements with animation classes
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+    // 初期表示でもビューポート内にある要素は直ちにanimatedを付与
+    function addAnimatedIfInView(element) {
+        const rect = element.getBoundingClientRect();
+        const inView = rect.top < (window.innerHeight * 0.95) && rect.bottom > 0;
+        if (inView) {
+            element.classList.add('animated');
+        }
+    }
+
     animatedElements.forEach(element => {
-        // Initialize elements for reduced motion
         if (prefersReducedMotion) {
             element.style.opacity = '1';
             element.style.transform = 'none';
         }
+        addAnimatedIfInView(element);
         animationObserver.observe(element);
+    });
+
+    // ロード時・リサイズ時にも再判定（特にモバイル初期表示で有効）
+    window.addEventListener('load', () => {
+        animatedElements.forEach(addAnimatedIfInView);
+    });
+    window.addEventListener('resize', () => {
+        animatedElements.forEach(addAnimatedIfInView);
     });
 
     // Parallax effect for hero section
