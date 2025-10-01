@@ -660,15 +660,13 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     height: 55px;
 }
 
 .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    display: none;
 }
 
 .nav-logo {
