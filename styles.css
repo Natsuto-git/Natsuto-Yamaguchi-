@@ -2142,7 +2142,7 @@ button, a, .card, .skill-category, .highlight-item {
     .hero-subtitle {
         text-align: center;
         width: 100%;
-        margin: 0 auto 1.5rem;
+        margin: -50px auto 1.5rem;
         padding: 0 1rem;
         font-size: 1.1rem;
         line-height: 1;
