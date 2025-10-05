@@ -510,6 +510,27 @@ html {
 
 /* Mobile-first optimizations */
 @media (max-width: 768px) {
+    /* Force hero background image on the section itself and remove overlays */
+    .hero-section {
+        background: url('images/web/background1.jpg') center top/cover no-repeat !important;
+    }
+
+    .hero-section::before,
+    .hero-section::after {
+        display: none !important;
+        content: none !important;
+        opacity: 0 !important;
+        filter: none !important;
+        background: none !important;
+    }
+
+    /* Make navbar opaque on mobile to avoid seeing any overlay behind */
+    .navbar {
+        background: var(--bg-primary) !important;
+        backdrop-filter: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
     /* Fill background image to the very top on mobile */
     .hero-section::before {
         background: url('images/web/background1.jpg') center top/cover no-repeat !important;
@@ -522,6 +543,22 @@ html {
 }
 
 @media (max-width: 480px) {
+    .hero-section {
+        background: url('images/web/background1.jpg') center top/cover no-repeat !important;
+    }
+
+    .hero-section::before,
+    .hero-section::after {
+        display: none !important;
+        content: none !important;
+        opacity: 0 !important;
+        filter: none !important;
+        background: none !important;
+    }
+
+    .navbar {
+        background: var(--bg-primary) !important;
+    }
     /* Ensure the very top is covered on small mobiles */
     .hero-section::before {
         background: url('images/web/background1.jpg') center top/cover no-repeat !important;
