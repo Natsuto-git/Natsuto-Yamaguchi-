@@ -771,3 +771,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('🎉 Natsuto Yamaguchi Portfolio loaded successfully!');
 });
+
+// vCard Download Function
+function downloadVCard() {
+    const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:山口夏翔
+N:山口;夏翔;;;
+ORG:LotusCard
+TITLE:共同CEO
+TEL:+81-70-1796-7210
+EMAIL:baseball10210303@gmail.com
+URL:https://www.instagram.com/__natsuto_/
+URL:https://line.me/ti/p/q-gD4gWwwC
+URL:https://www.linkedin.com/in/natsuto-yamaguchi-870855343/
+NOTE:19歳のフリーランサー。ENFJタイプで挑戦が大好きな自由人です。
+END:VCARD`;
+
+    const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = '山口夏翔.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(link.href);
+}
