@@ -2095,7 +2095,7 @@ button, a, .card, .skill-category, .highlight-item {
 }
 
     .hero-name-image {
-        margin-bottom: -20px;
+        margin-bottom: 0.5rem;
     }
 
     .name-signature {
@@ -2118,7 +2118,7 @@ button, a, .card, .skill-category, .highlight-item {
 
     .hero-name-en {
         font-size: 1.4rem;
-        margin-top: -35px;
+        margin-top: 0.5rem;
         opacity: 0.8;
         word-break: keep-all;
         text-align: center;
@@ -2142,7 +2142,7 @@ button, a, .card, .skill-category, .highlight-item {
     .hero-subtitle {
         text-align: center;
         width: 100%;
-        margin: -50px auto 1.5rem;
+        margin: -30px auto 1.5rem;
         padding: 0 1rem;
         font-size: 1.1rem;
         line-height: 1;
@@ -2342,7 +2342,6 @@ button, a, .card, .skill-category, .highlight-item {
 
     .hero-name-en {
         font-size: 1.1rem;
-        margin-top: -35px;
         word-break: keep-all;
         text-align: center;
         width: 100%;
