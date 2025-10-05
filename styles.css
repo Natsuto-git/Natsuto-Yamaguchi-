@@ -2118,7 +2118,7 @@ button, a, .card, .skill-category, .highlight-item {
 
     .hero-name-en {
         font-size: 1.4rem;
-        margin-top: 0.5rem;
+        margin-top: calc(0.5rem - 20px);
         opacity: 0.8;
         word-break: keep-all;
         text-align: center;
