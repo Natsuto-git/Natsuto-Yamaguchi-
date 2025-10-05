@@ -980,6 +980,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     max-width: 1200px;
     margin: -120px auto 0 !important;
+    transform: translateY(20px);
     padding: 0 2rem;
     position: relative;
     z-index: 3;
@@ -2196,6 +2197,7 @@ button, a, .card, .skill-category, .highlight-item {
 
     .hero-container {
         margin-top: -90px !important;
+        transform: translateY(20px);
     }
 
     .hero-content {
