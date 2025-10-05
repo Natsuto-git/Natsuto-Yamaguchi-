@@ -2095,7 +2095,7 @@ button, a, .card, .skill-category, .highlight-item {
 }
 
     .hero-name-image {
-        margin-bottom: 0.5rem;
+        margin-bottom: calc(0.5rem + 20px);
     }
 
     .name-signature {
