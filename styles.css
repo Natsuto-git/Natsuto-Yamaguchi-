@@ -768,7 +768,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     cursor: pointer;
     gap: 3px;
-    margin-top: -18px;
+    margin-top: -8px; /* move icon 10px down */
     margin-right: -10px;
 }
 
@@ -2090,6 +2090,7 @@ button, a, .card, .skill-category, .highlight-item {
 
     .hamburger {
         display: flex;
+        margin-top: 2px !important; /* force push 10px down from previous -8px baseline */
     }
 
     .hamburger.active .bar:nth-child(2) {
