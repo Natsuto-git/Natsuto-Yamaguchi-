@@ -2119,6 +2119,7 @@ button, a, .card, .skill-category, .highlight-item {
     .hero-name-en {
         font-size: 1.4rem;
         margin-top: -20px;
+        transform: translateY(-20px);
         opacity: 0.8;
         word-break: keep-all;
         text-align: center;
@@ -2342,6 +2343,8 @@ button, a, .card, .skill-category, .highlight-item {
 
     .hero-name-en {
         font-size: 1.1rem;
+        margin-top: -20px;
+        transform: translateY(-20px);
         word-break: keep-all;
         text-align: center;
         width: 100%;
