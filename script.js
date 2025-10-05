@@ -770,4 +770,58 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     console.log('🎉 Natsuto Yamaguchi Portfolio loaded successfully!');
+
+    // Dial interactions
+    const dialWheel = document.getElementById('dialWheel');
+    if (dialWheel) {
+        let currentDeg = 0;
+        let isDragging = false;
+        let startX = 0;
+        let lastX = 0;
+        let rafId = null;
+
+        function setRotation(deg) {
+            currentDeg = deg;
+            dialWheel.style.animation = 'none';
+            dialWheel.style.transform = `rotateY(${currentDeg}deg)`;
+        }
+
+        function onPointerDown(x) {
+            isDragging = true;
+            startX = x;
+            lastX = x;
+            dialWheel.style.cursor = 'grabbing';
+        }
+
+        function onPointerMove(x) {
+            if (!isDragging) return;
+            const delta = x - lastX;
+            lastX = x;
+            // 1px ≒ 0.5deg 回転
+            setRotation(currentDeg + delta * 0.5);
+        }
+
+        function onPointerUp() {
+            isDragging = false;
+            dialWheel.style.cursor = 'grab';
+            // 慣性は付けずに静止
+        }
+
+        // Mouse
+        dialWheel.addEventListener('mousedown', (e) => onPointerDown(e.clientX));
+        window.addEventListener('mousemove', (e) => onPointerMove(e.clientX));
+        window.addEventListener('mouseup', onPointerUp);
+
+        // Touch
+        dialWheel.addEventListener('touchstart', (e) => {
+            if (e.touches[0]) onPointerDown(e.touches[0].clientX);
+        }, { passive: true });
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches[0]) onPointerMove(e.touches[0].clientX);
+        }, { passive: true });
+        window.addEventListener('touchend', onPointerUp);
+
+        // 初期カーソル
+        dialWheel.style.cursor = 'grab';
+    }
 });
