@@ -510,14 +510,6 @@ html {
 
 /* Mobile-first optimizations */
 @media (max-width: 768px) {
-    /* Ensure 20px safe spacing on mobile as well */
-    .hero-section {
-        margin-top: calc(20px + env(safe-area-inset-top));
-    }
-    /* Force lower offset to avoid icon overflow */
-    .hero-container {
-        margin-top: -120px !important;
-    }
     html {
         font-size: 15px;
     }
@@ -885,9 +877,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: background 0.3s ease;
     position: relative;
     overflow: hidden;
-    padding-top: 70px;
-    /* Top safe margin to prevent overflow under status bar / notch */
-    margin-top: calc(20px + env(safe-area-inset-top));
+    padding-top: 40px;
 }
 
 .hero-section::after {
@@ -924,7 +914,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-container {
     width: 100%;
     max-width: 1200px;
-    margin: -180px auto 0 !important;
+    margin: -120px auto 0 !important;
     padding: 0 2rem;
     position: relative;
     z-index: 3;
@@ -2139,7 +2129,7 @@ button, a, .card, .skill-category, .highlight-item {
     }
 
     .hero-container {
-        margin-top: -140px !important;
+        margin-top: -120px !important;
     }
 
     .hero-content {
@@ -2433,7 +2423,7 @@ button, a, .card, .skill-category, .highlight-item {
     }
 
     .hero-container {
-        margin-top: -220px !important;
+        margin-top: -120px !important;
     }
 
     .hero-name-en {
