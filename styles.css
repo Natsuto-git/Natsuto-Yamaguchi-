@@ -514,6 +514,10 @@ html {
     .hero-section {
         margin-top: calc(20px + env(safe-area-inset-top));
     }
+    /* Force lower offset to avoid icon overflow */
+    .hero-container {
+        margin-top: -120px !important;
+    }
     html {
         font-size: 15px;
     }
