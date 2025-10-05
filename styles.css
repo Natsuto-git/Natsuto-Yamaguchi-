@@ -510,6 +510,10 @@ html {
 
 /* Mobile-first optimizations */
 @media (max-width: 768px) {
+    /* Ensure 20px safe spacing on mobile as well */
+    .hero-section {
+        margin-top: calc(20px + env(safe-area-inset-top));
+    }
     html {
         font-size: 15px;
     }
@@ -878,6 +882,8 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     overflow: hidden;
     padding-top: 70px;
+    /* Top safe margin to prevent overflow under status bar / notch */
+    margin-top: calc(20px + env(safe-area-inset-top));
 }
 
 .hero-section::after {
