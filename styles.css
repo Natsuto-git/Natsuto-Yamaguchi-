@@ -914,7 +914,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-container {
     width: 100%;
     max-width: 1200px;
-    margin: -130px auto 0;
+    margin: -160px auto 0;
     padding: 0 2rem;
     position: relative;
     z-index: 3;
@@ -2069,6 +2069,10 @@ button, a, .card, .skill-category, .highlight-item {
         flex-direction: column;
     }
 
+    .hero-container {
+        margin-top: -160px;
+    }
+
     .hero-content {
         flex-direction: column;
         text-align: center;
@@ -2339,6 +2343,10 @@ button, a, .card, .skill-category, .highlight-item {
         padding: 0 0.5rem;
         text-align: center;
         width: 100%;
+    }
+
+    .hero-container {
+        margin-top: -160px;
     }
 
     .hero-name-en {
