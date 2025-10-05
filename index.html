@@ -45,7 +45,6 @@
     <link rel="canonical" href="https://natsuto-yamaguchi.com/">
     <link rel="icon" type="image/jpeg" href="images/web/icon.jpg">
     <title>山口夏翔 | Natsuto Yamaguchi - Portfolio</title>
-    <!-- Cache bust: 2024-12-19 -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -139,7 +138,6 @@
                             <span data-ja="ワクワクする道を選んで、その道を正解にしていく" data-en="Choose the path that excites you, and make it the right one" data-zh="选择让自己兴奋的道路，然后让它成为正确的选择">ワクワクする道を選んで、その道を正解にしていく</span>
                         </div>
                         <div class="hero-contact">
-                            <h3 class="contact-title">Contact</h3>
                             <div class="contact-links">
                                 <a href="https://www.instagram.com/__natsuto_/" class="contact-link instagram" target="_blank" rel="noopener">
                                     <div class="contact-icon">
@@ -534,29 +532,40 @@
 
     <script defer src="script.js"></script>
     <script>
-      // 強化版フェールセーフ: 必ずローディングを消す
+      // 超強力フェールセーフ: 確実にローディング画面を消す
       (function(){
         var done = false;
-        function hide(){
-          if (done) return; done = true;
-          var el = document.getElementById('loadingScreen');
-          if (!el) return;
-          el.classList.add('fade-out');
-          el.style.opacity = '0';
-          setTimeout(function(){ 
-            el.style.display = 'none'; 
-          }, 800);
+        function hideLoading(){
+          if (done) return; 
+          done = true;
+          var loadingEl = document.getElementById('loadingScreen');
+          if (loadingEl) {
+            loadingEl.style.opacity = '0';
+            loadingEl.style.transition = 'opacity 0.5s ease';
+            setTimeout(function(){ 
+              loadingEl.style.display = 'none'; 
+            }, 500);
+          }
         }
-        // 即座に実行
-        setTimeout(hide, 1500);
-        // DOMContentLoaded後
+        
+        // 即座に実行（0.5秒後）
+        setTimeout(hideLoading, 500);
+        
+        // DOMContentLoaded後（1秒後）
+        setTimeout(hideLoading, 1000);
+        
+        // 最終フェールセーフ（2秒後）
+        setTimeout(hideLoading, 2000);
+        
+        // ページロード後
         if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', hide);
+          document.addEventListener('DOMContentLoaded', hideLoading);
         } else {
-          hide();
+          hideLoading();
         }
-        // 最終フェールセーフ
-        setTimeout(hide, 3000);
+        
+        // window.onload後
+        window.addEventListener('load', hideLoading);
       })();
     </script>
 </body>
