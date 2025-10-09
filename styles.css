@@ -1499,9 +1499,7 @@ button, a, .card, .skill-category, .highlight-item {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        url('images/web/webp/background3.webp') center/cover no-repeat,
-        linear-gradient(135deg, rgba(19, 83, 137, 0.06) 0%, rgba(203, 168, 144, 0.04) 100%);
+    background: linear-gradient(135deg, rgba(19, 83, 137, 0.06) 0%, rgba(203, 168, 144, 0.04) 100%);
     pointer-events: none;
     opacity: 0.4;
     filter: blur(1px);
@@ -1616,9 +1614,7 @@ button, a, .card, .skill-category, .highlight-item {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        url('images/web/webp/background4.webp') center/cover no-repeat,
-        linear-gradient(135deg, rgba(19, 83, 137, 0.06) 0%, rgba(203, 168, 144, 0.04) 100%);
+    background: linear-gradient(135deg, rgba(19, 83, 137, 0.06) 0%, rgba(203, 168, 144, 0.04) 100%);
     pointer-events: none;
     opacity: 0.2;
     filter: blur(1px);
@@ -1726,9 +1722,7 @@ button, a, .card, .skill-category, .highlight-item {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        url('images/web/background3.jpg') center/cover no-repeat,
-        linear-gradient(135deg, rgba(203, 168, 144, 0.1) 0%, rgba(111, 120, 157, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(203, 168, 144, 0.1) 0%, rgba(111, 120, 157, 0.05) 100%);
     pointer-events: none;
     opacity: 0.25;
     filter: blur(1px);
@@ -1854,9 +1848,7 @@ button, a, .card, .skill-category, .highlight-item {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        url('images/web/webp/background6.webp') center/cover no-repeat,
-        linear-gradient(135deg, rgba(19, 83, 137, 0.08) 0%, rgba(203, 168, 144, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(19, 83, 137, 0.08) 0%, rgba(203, 168, 144, 0.05) 100%);
     pointer-events: none;
     opacity: 0.3;
     filter: blur(1px);
@@ -2786,9 +2778,7 @@ button, a, .card, .skill-category, .highlight-item {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        url('images/web/webp/background2.webp') center/cover no-repeat,
-        linear-gradient(135deg, rgba(19, 83, 137, 0.08) 0%, rgba(111, 120, 157, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(19, 83, 137, 0.08) 0%, rgba(111, 120, 157, 0.05) 100%);
     pointer-events: none;
     opacity: 0.3;
     filter: blur(1px);
@@ -3235,9 +3225,7 @@ button, a, .card, .skill-category, .highlight-item {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        url('images/web/webp/background5.webp') center/cover no-repeat,
-        linear-gradient(135deg, rgba(203, 168, 144, 0.15) 0%, rgba(111, 120, 157, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(203, 168, 144, 0.15) 0%, rgba(111, 120, 157, 0.1) 100%);
     pointer-events: none;
     opacity: 0.25;
     filter: blur(1px);

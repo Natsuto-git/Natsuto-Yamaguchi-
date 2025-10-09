@@ -6,6 +6,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="山口夏翔（Natsuto Yamaguchi）の自己紹介・ポートフォリオサイト。19歳フリーランサーの経験・スキル・価値観を紹介。人間力と情熱、行動力で学歴を圧倒することを目標に活動中。">
@@ -36,8 +37,8 @@
     <meta name="twitter:creator" content="@__natsuto_">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#1E3A8A">
-    <meta name="msapplication-TileColor" content="#1E3A8A">
+    <meta name="theme-color" content="#FAFAFA">
+    <meta name="msapplication-TileColor" content="#FAFAFA">
     <meta name="apple-mobile-web-app-title" content="Natsuto Yamaguchi">
     <meta name="application-name" content="Natsuto Yamaguchi Portfolio">
     
@@ -47,7 +48,7 @@
     <title>山口夏翔 | Natsuto Yamaguchi - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" crossorigin href="/assets/index.2dc13Ncn.css">
+  <link rel="stylesheet" crossorigin href="/assets/index.r28sRUPM.css">
 </head>
 <body>
     <div class="loading-screen" id="loadingScreen">
@@ -166,6 +167,12 @@
                                     </div>
                                 </a>
                             </div>
+                        </div>
+                        <div class="save-contact-section">
+                            <button class="save-contact-btn" onclick="downloadVCard()">
+                                <i class="fas fa-address-card"></i>
+                                <span>連絡先に保存</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -519,43 +526,43 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                </div>
-                <div class="footer-image">
-                    <img src="/assets/LotusCard.logo.BcxkUna9.jpg" alt="LotusCard Logo" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script defer src="script.js"></script>
     <script>
-      // 強化版フェールセーフ: 必ずローディングを消す
+      // 超強力フェールセーフ: 確実にローディング画面を消す
       (function(){
         var done = false;
-        function hide(){
-          if (done) return; done = true;
-          var el = document.getElementById('loadingScreen');
-          if (!el) return;
-          el.classList.add('fade-out');
-          el.style.opacity = '0';
-          setTimeout(function(){ 
-            el.style.display = 'none'; 
-          }, 800);
+        function hideLoading(){
+          if (done) return; 
+          done = true;
+          var loadingEl = document.getElementById('loadingScreen');
+          if (loadingEl) {
+            loadingEl.style.opacity = '0';
+            loadingEl.style.transition = 'opacity 0.5s ease';
+            setTimeout(function(){ 
+              loadingEl.style.display = 'none'; 
+            }, 500);
+          }
         }
-        // 即座に実行
-        setTimeout(hide, 1500);
-        // DOMContentLoaded後
+        
+        // 即座に実行（0.5秒後）
+        setTimeout(hideLoading, 500);
+        
+        // DOMContentLoaded後（1秒後）
+        setTimeout(hideLoading, 1000);
+        
+        // 最終フェールセーフ（2秒後）
+        setTimeout(hideLoading, 2000);
+        
+        // ページロード後
         if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', hide);
+          document.addEventListener('DOMContentLoaded', hideLoading);
         } else {
-          hide();
+          hideLoading();
         }
-        // 最終フェールセーフ
-        setTimeout(hide, 3000);
+        
+        // window.onload後
+        window.addEventListener('load', hideLoading);
       })();
     </script>
 </body>
