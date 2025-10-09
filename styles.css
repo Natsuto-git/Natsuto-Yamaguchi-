@@ -516,12 +516,6 @@ html {
     .nav-container {
         height: 40px !important;
     }
-    /* Fill background image to the very top on mobile */
-    .hero-section::before {
-        background: url('images/web/background1.jpg') center top/cover no-repeat !important;
-        opacity: 0.3;
-        filter: none;
-    }
     html {
         font-size: 15px;
     }
@@ -551,12 +545,6 @@ html {
 
     .nav-container {
         height: 40px !important;
-    }
-    /* Ensure the very top is covered on small mobiles */
-    .hero-section::before {
-        background: url('images/web/background1.jpg') center top/cover no-repeat !important;
-        opacity: 0.35;
-        filter: none;
     }
     html {
         font-size: 14px;
@@ -956,9 +944,9 @@ h1, h2, h3, h4, h5, h6 {
 .hero-container {
     width: 100%;
     max-width: 1200px;
-    margin: -120px auto 0 !important;
+    margin: 0 auto;
     transform: translateY(20px);
-    padding: 0 2rem;
+    padding: 2rem;
     position: relative;
     z-index: 3;
 }
@@ -2142,7 +2130,7 @@ button, a, .card, .skill-category, .highlight-item {
     }
 
     .hero-container {
-        margin-top: -90px !important;
+        margin-top: 0;
         transform: translateY(20px);
     }
 
@@ -2437,7 +2425,7 @@ button, a, .card, .skill-category, .highlight-item {
     }
 
     .hero-container {
-        margin-top: -120px !important;
+        margin-top: 0;
     }
 
     .hero-name-en {
