@@ -3454,6 +3454,64 @@ button, a, .card, .skill-category, .highlight-item {
     margin-bottom: 2rem;
 }
 
+/* LINE Contact Button */
+.contact-line-section {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-line-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #00C300, #00A000);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 1.5rem 3rem;
+    box-shadow: 0 8px 30px rgba(0, 195, 0, 0.3);
+    transition: all 0.3s ease;
+    max-width: 400px;
+    width: 100%;
+}
+
+.contact-line-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 195, 0, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+.line-btn-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.line-btn-content i {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.line-btn-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.line-btn-main {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+}
+
+.line-btn-sub {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+    line-height: 1.3;
+}
+
 .contact-buttons {
     display: flex;
     justify-content: center;
@@ -3536,6 +3594,23 @@ button, a, .card, .skill-category, .highlight-item {
     .contact-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .contact-line-btn {
+        padding: 1.2rem 2rem;
+        max-width: 350px;
+    }
+    
+    .line-btn-content i {
+        font-size: 2rem;
+    }
+    
+    .line-btn-main {
+        font-size: 1rem;
+    }
+    
+    .line-btn-sub {
+        font-size: 0.9rem;
     }
     
     .hero-quote {
