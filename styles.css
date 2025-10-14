@@ -1137,6 +1137,11 @@ button, a, .card, .skill-category, .highlight-item {
     box-shadow: 0 8px 30px var(--shadow-light);
     text-decoration: none;
     position: relative;
+    /* モバイルでのタップしやすさを向上 */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    min-height: 48px; /* モバイルでの最小タップサイズ */
     overflow: hidden;
 }
 

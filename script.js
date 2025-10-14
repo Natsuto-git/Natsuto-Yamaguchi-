@@ -774,12 +774,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // vCard button event listener
     const vcardButton = document.querySelector('.save-contact-btn');
     if (vcardButton) {
+        // 複数のイベントタイプに対応
         vcardButton.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('🔘 vCard button clicked');
+            e.stopPropagation();
+            console.log('🔘 vCard button clicked (click event)');
             downloadVCard();
         });
-        console.log('📇 vCard button event listener added');
+        
+        // タッチイベントにも対応
+        vcardButton.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('🔘 vCard button touched (touchend event)');
+            downloadVCard();
+        });
+        
+        // ボタンの視覚的フィードバック
+        vcardButton.addEventListener('touchstart', function(e) {
+            this.style.opacity = '0.7';
+        });
+        
+        vcardButton.addEventListener('touchend', function(e) {
+            this.style.opacity = '1';
+        });
+        
+        console.log('📇 vCard button event listeners added (click + touch)');
     } else {
         console.warn('⚠️ vCard button not found');
     }
@@ -789,6 +809,10 @@ document.addEventListener('DOMContentLoaded', function() {
 function downloadVCard() {
     try {
         console.log('📇 vCard download started...');
+        
+        // モバイルデバイスかどうかを判定
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        console.log('📱 Device type:', isMobile ? 'Mobile' : 'Desktop');
         
         const vcardData = `BEGIN:VCARD
 VERSION:3.0
@@ -809,26 +833,71 @@ END:VCARD`;
         const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
         console.log('📦 Blob created:', blob);
         
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = '山口夏翔.vcf';
-        link.style.display = 'none';
-        
-        document.body.appendChild(link);
-        console.log('🔗 Download link created and added to DOM');
-        
-        link.click();
-        console.log('✅ Download triggered');
-        
-        // Clean up
-        setTimeout(() => {
-            document.body.removeChild(link);
-            URL.revokeObjectURL(link.href);
-            console.log('🧹 Cleanup completed');
-        }, 100);
+        if (isMobile) {
+            // モバイル環境では新しいタブで開く
+            const dataUrl = URL.createObjectURL(blob);
+            const newWindow = window.open(dataUrl, '_blank');
+            
+            if (newWindow) {
+                console.log('📱 Mobile: Opened in new tab');
+                // モバイル用のメッセージを表示
+                setTimeout(() => {
+                    alert('連絡先ファイルが開きました。\n「連絡先に追加」または「保存」をタップしてください。');
+                }, 500);
+            } else {
+                // ポップアップブロックされた場合の代替手段
+                console.log('📱 Mobile: Popup blocked, trying alternative method');
+                const link = document.createElement('a');
+                link.href = dataUrl;
+                link.download = '山口夏翔.vcf';
+                link.target = '_blank';
+                link.style.display = 'block';
+                link.style.padding = '10px';
+                link.style.backgroundColor = '#007bff';
+                link.style.color = 'white';
+                link.style.textDecoration = 'none';
+                link.style.borderRadius = '5px';
+                link.style.margin = '10px';
+                link.textContent = '連絡先ファイルをダウンロード';
+                
+                // 一時的にボタンの代わりに表示
+                const button = document.querySelector('.save-contact-btn');
+                if (button) {
+                    button.style.display = 'none';
+                    button.parentNode.appendChild(link);
+                    
+                    // 5秒後に元のボタンを復元
+                    setTimeout(() => {
+                        button.style.display = '';
+                        if (link.parentNode) {
+                            link.parentNode.removeChild(link);
+                        }
+                    }, 5000);
+                }
+            }
+        } else {
+            // デスクトップ環境では通常のダウンロード
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = '山口夏翔.vcf';
+            link.style.display = 'none';
+            
+            document.body.appendChild(link);
+            console.log('🔗 Download link created and added to DOM');
+            
+            link.click();
+            console.log('✅ Download triggered');
+            
+            // Clean up
+            setTimeout(() => {
+                document.body.removeChild(link);
+                URL.revokeObjectURL(link.href);
+                console.log('🧹 Cleanup completed');
+            }, 100);
+        }
         
     } catch (error) {
         console.error('❌ vCard download failed:', error);
-        alert('連絡先の保存に失敗しました。ブラウザの設定を確認してください。');
+        alert('連絡先の保存に失敗しました。ブラウザの設定を確認してください。\nエラー: ' + error.message);
     }
 }
