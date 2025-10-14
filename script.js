@@ -770,11 +770,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     console.log('🎉 Natsuto Yamaguchi Portfolio loaded successfully!');
+    
+    // vCard button event listener
+    const vcardButton = document.querySelector('.save-contact-btn');
+    if (vcardButton) {
+        vcardButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('🔘 vCard button clicked');
+            downloadVCard();
+        });
+        console.log('📇 vCard button event listener added');
+    } else {
+        console.warn('⚠️ vCard button not found');
+    }
 });
 
 // vCard Download Function
 function downloadVCard() {
-    const vcardData = `BEGIN:VCARD
+    try {
+        console.log('📇 vCard download started...');
+        
+        const vcardData = `BEGIN:VCARD
 VERSION:3.0
 FN:山口夏翔
 N:山口;夏翔;;;
@@ -788,12 +804,31 @@ URL:https://www.linkedin.com/in/natsuto-yamaguchi-870855343/
 NOTE:19歳のフリーランサー。ENFJタイプで挑戦が大好きな自由人です。
 END:VCARD`;
 
-    const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = '山口夏翔.vcf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(link.href);
+        console.log('📄 vCard data created:', vcardData);
+        
+        const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+        console.log('📦 Blob created:', blob);
+        
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = '山口夏翔.vcf';
+        link.style.display = 'none';
+        
+        document.body.appendChild(link);
+        console.log('🔗 Download link created and added to DOM');
+        
+        link.click();
+        console.log('✅ Download triggered');
+        
+        // Clean up
+        setTimeout(() => {
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+            console.log('🧹 Cleanup completed');
+        }, 100);
+        
+    } catch (error) {
+        console.error('❌ vCard download failed:', error);
+        alert('連絡先の保存に失敗しました。ブラウザの設定を確認してください。');
+    }
 }
