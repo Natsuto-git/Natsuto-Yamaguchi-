@@ -3716,4 +3716,219 @@ button, a, .card, .skill-category, .highlight-item {
     .progress-percentage {
         align-self: flex-end;
     }
-}/* Force cache refresh - Sun Aug 31 00:53:27 JST 2025 */
+}
+
+/* 訪れた国や地域セクションのスタイル */
+.countries-section {
+    margin-top: 2rem;
+}
+
+.countries-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px var(--shadow-light);
+    border: 1px solid rgba(7, 29, 42, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.countries-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+    border-radius: 20px 20px 0 0;
+}
+
+.countries-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px var(--shadow-medium);
+}
+
+.countries-card .card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px rgba(245, 131, 7, 0.3);
+}
+
+.countries-card .card-icon i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.countries-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+}
+
+.countries-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.countries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.country-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.country-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 13px;
+}
+
+.country-item:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    border-color: var(--accent-color);
+}
+
+.country-item:hover::before {
+    opacity: 0.1;
+}
+
+.country-flag {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.country-item:hover .country-flag {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.country-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.country-item:hover .country-name {
+    color: var(--accent-color);
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .countries-card {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .countries-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .countries-card p {
+        font-size: 0.9rem;
+    }
+    
+    .countries-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+    
+    .country-item {
+        padding: 0.75rem;
+    }
+    
+    .country-flag {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .country-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .countries-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .country-item {
+        padding: 0.5rem;
+    }
+    
+    .country-flag {
+        font-size: 1.8rem;
+    }
+    
+    .country-name {
+        font-size: 0.75rem;
+    }
+}
+
+/* ダークテーマ対応 */
+[data-theme="dark"] .countries-card {
+    background: var(--dark-bg-secondary);
+    border-color: rgba(96, 165, 250, 0.2);
+}
+
+[data-theme="dark"] .countries-card h3 {
+    color: var(--dark-text-primary);
+}
+
+[data-theme="dark"] .countries-card p {
+    color: var(--dark-text-secondary);
+}
+
+[data-theme="dark"] .country-item {
+    background: var(--dark-bg-tertiary);
+    border-color: rgba(96, 165, 250, 0.1);
+}
+
+[data-theme="dark"] .country-name {
+    color: var(--dark-text-primary);
+}
+
+[data-theme="dark"] .country-item:hover .country-name {
+    color: var(--dark-accent-color);
+}
+
+/* Force cache refresh - Sun Aug 31 00:53:27 JST 2025 */
